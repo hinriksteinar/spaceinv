@@ -1,8 +1,9 @@
-function gunnifag
+function gunnifag()
 {
-  x=gunni er fag
-  While (x==true)
+  var x = "gunni er fag";
+  While (true)
   {
-      continue;
+      console.log(x);
   }
 }
+gunnifag();
