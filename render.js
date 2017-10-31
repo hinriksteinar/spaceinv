@@ -18,6 +18,7 @@ function render(ctx) {
 
     // Process various option toggles
     //
+
     if (eatKey(TOGGLE_CLEAR)) g_doClear = !g_doClear;
     if (eatKey(TOGGLE_BOX)) g_doBox = !g_doBox;
     if (eatKey(TOGGLE_UNDO_BOX)) g_undoBox = !g_undoBox;

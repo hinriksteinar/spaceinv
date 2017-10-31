@@ -44,13 +44,12 @@ Paddle.prototype.update = function () {
 
 Paddle.prototype.render = function (ctx) {
     // (cx, cy) is the centre; must offset it for drawing
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.cx - this.halfWidth,
-                 this.cy - this.halfHeight,
-                 this.halfWidth * 2,
-                 this.halfHeight * 2);
+    //ctx.fillStyle = this.color;
+    g_enemy.drawAt(ctx,
+                 this.cx,
+                 this.cy);
     ctx.font="bold 40px Arial";
-    ctx.fillStyle= 'black';
+    ctx.fillStyle= 'white';
     ctx.fillText('Score',20,35);
     ctx.fillText(g_paddle1.count.toString(),150,35);
 };

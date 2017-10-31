@@ -3,7 +3,10 @@
 // =====
 
 function clearCanvas(ctx) {
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    var oldStyle = ctx.fillStyle;
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.fillStyle = oldStyle;
 }
 
 function fillCircle(ctx, x, y, r) {
