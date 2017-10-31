@@ -1,26 +1,31 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Sample "Hello, World" Application</title>
+    <meta charset="UTF-8">
+    <title>Breakout</title>
   </head>
-  <body bgcolor=white>
+  <body>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
-    <table border="0" cellpadding="10">
-      <tr>
-        <td>
-          <img src="images/springsource.png">
-        </td>
-        <td>
-          <h1>Sample "Hello, World" Application</h1>
-        </td>
-      </tr>
-    </table>
+    <h1> Breakout game </h1> <br>
 
-    <p>This is the home page for the HelloWorld Web application. </p>
-    <p>To prove that they work, you can execute either of the following links:
-    <ul>
-      <li>To a <a href="hello.jsp">JSP page</a>.
-      <li>To a <a href="hello">servlet</a>.
-    </ul>
+	<canvas id="myCanvas" width="400" height="400"
+		style="border: 1px solid black;">
+	Sorry, but your browser does not support the HTML5 canvas tag.
+	</canvas>
 
+    <div id="output"></div>
+
+    <script src="utils.js"></script>
+    <script src="g_keys.js"></script>
+    <script src="Paddle.js"></script>
+    <script src="g_ball.js"></script>
+    <script src="g_main.js"></script>
+    <script src="update.js"></script>
+    <script src="render.js"></script>
+    <script src="PONG.js"></script>
+     <script src="g_bricks.js"></script>
+    <p><b>Things I added</b><br>Black bricks require 3 hits<br>Yellow bricks require 2 hits<br>Blue bricks require 1 hit<br>Added a highscore<br>Added a secound ball with diffrent velocity<br><br>
+      <b>To Play the Beakout game se A and D to move the paddle <br> P = Pause </p>
   </body>
 </html>
