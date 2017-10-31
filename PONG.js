@@ -15,8 +15,8 @@ var KEY_D = 'D'.charCodeAt(0);
 
 
 var g_paddle1 = new Paddle({
-    cx : 200,
-    cy : 370,
+    cx : 400,
+    cy : 470,
     count : 0,
     countAdded : 10,
     color: 'black',
