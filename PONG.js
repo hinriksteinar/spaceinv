@@ -78,7 +78,7 @@ var KEY_RESTART  = 'H'.charCodeAt(0);
         document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
 
     }
-        //g_paddle1.count = 0;
+        g_paddle1.count = 0;
         g_isUpdatePaused = false;
 
     }
