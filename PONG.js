@@ -44,8 +44,6 @@ function gatherInputs() {
 function updateSimulation(du) {
 
 
-    g_ball.update(du);
-    g_ball2.update(du);
 
     g_paddle1.update(du);
 
@@ -58,47 +56,14 @@ function updateSimulation(du) {
 function renderSimulation(ctx) {
     clearCanvas(ctx);
 
-    g_ball.render(ctx);
-    g_ball2.render(ctx);
 
-    g_wall.render(ctx);
     g_paddle1.render(ctx);
-    checkDeadOrWin(ctx);
 
 }
 
 var KEY_RESTART  = 'H'.charCodeAt(0);
-function checkDeadOrWin(ctx){
-        if(g_wall.bricksLeft === false ){
-            ctx.font="bold 40px Arial";
-    ctx.fillStyle= 'green';
-    ctx.textAlign = 'center';
-    ctx.fillText("YOU WIN", g_canvas.width/2,g_canvas.height/2);
-    ctx.fillStyle = 'black';
-    ctx.strokeText("YOU WIN", g_canvas.width/2,g_canvas.height/2);
-    ctx.font="bold 20px Arial";
-    ctx.fillStyle= 'green';
-    ctx.textAlign = 'center';
-    ctx.fillText("Congratulations !", (g_canvas.width/2),(g_canvas.height+40)/2);
-    ctx.fillStyle = 'black';
-    ctx.strokeText("Congratulations!", (g_canvas.width/2),(g_canvas.height)+40/2);
-    g_isUpdatePaused = true;
 
-    }
-    if(g_ball.dead && g_ball2.dead){
-    ctx.font="bold 40px Arial";
-    ctx.fillStyle= 'yellow';
-    ctx.textAlign = 'center';
-    ctx.fillText("GAME OVER", g_canvas.width/2,g_canvas.height/2);
-    ctx.fillStyle = 'black';
-    ctx.strokeText("GAME OVER", g_canvas.width/2,g_canvas.height/2);
-    ctx.font="bold 20px Arial";
-    ctx.fillStyle= 'red';
-    ctx.textAlign = 'center';
-    ctx.fillText("YOU LOOSE", (g_canvas.width/2),(g_canvas.height+40)/2);
-    ctx.fillStyle = 'black';
-    ctx.strokeText("YOU LOOSE", (g_canvas.width/2),(g_canvas.height)+40/2);
-    g_isUpdatePaused = true;
+
     if(g_keys[KEY_RESTART]){
             var possHighScore = localStorage.getItem('breakouthighscore') || 0;
     document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
@@ -115,11 +80,8 @@ function checkDeadOrWin(ctx){
     }
         g_paddle1.count = 0;
         g_isUpdatePaused = false;
-        g_ball.reset();
-        g_ball2.reset();
+
     }
-    }
-}
 
 
 
