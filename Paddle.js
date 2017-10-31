@@ -51,7 +51,8 @@ Paddle.prototype.render = function (ctx) {
                  this.halfHeight * 2);
     ctx.font="bold 40px Arial";
     ctx.fillStyle= 'black';
-    ctx.fillText(g_paddle1.count.toString(),336,35);
+    ctx.fillText('Score',20,35);
+    ctx.fillText(g_paddle1.count.toString(),150,35);
 };
 
 Paddle.prototype.collidesWith = function (prevX, prevY,
