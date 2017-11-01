@@ -53,10 +53,6 @@ Tank.prototype.render = function (ctx) {
     this.sprite.drawAt(ctx,
                  this.cx-this.halfWidth,
                  this.cy-this.halfHeight);
-    ctx.font="bold 40px Arial";
-    ctx.fillStyle= 'white';
-    ctx.fillText('Score',20,35);
-    ctx.fillText(tank.count.toString(),150,35);
 };
 
 Tank.prototype.collidesWith = function (prevX, prevY,
