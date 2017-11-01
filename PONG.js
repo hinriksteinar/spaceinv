@@ -54,8 +54,7 @@ function updateSimulation(du) {
 // =================
 
 function renderSimulation(ctx) {
-    clearCanvas(ctx);
-    ctx.fillStyle ="images/invaders.png";
+    clearCanvas(ctx)
 
 
     g_paddle1.render(ctx);
