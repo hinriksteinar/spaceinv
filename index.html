@@ -36,33 +36,8 @@
     <audio id="background_audio" src="./Sound/xfiles.mp3" loop="loop" autoplay="autoplay">
   </audio>
 
-
-  <div>
-      <style scoped>
-
-          .button-success,
-          .button-error,
-          .button-warning,
-          .button-secondary {
-              color: white;
-              border-radius: 4px;
-              text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-              left: 20px;
-          }
-          .button-success {
-              background: rgb(28, 184, 65); /* this is a green */
-
-          }
-      </style>
-
-       <button class="button-success pure-button" onclick="enableMute()" type="button">Mute Game-sound</button> <br>
-      <br> <button class="button-success pure-button"onclick="enablePlay()" type="button">Play Game-sound</button>
-  </div>
-
-
-
-
-
+      <button class="button" onclick="enableMute()" type="button">Mute Game-sound</button>
+      <button class="button" onclick="enablePlay()" type="button">Play Game-sound</button>
 
 <script>
 var vid = document.getElementById("background_audio");
