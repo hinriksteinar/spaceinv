@@ -7,6 +7,7 @@ function clearCanvas(ctx) {
     ctx.fillStyle = 'black';
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     ctx.fillStyle = oldStyle;
+    ctx.drawImage(img1, 0, 0,ctx.canvas.width, ctx.canvas.height);
 }
 
 function fillCircle(ctx, x, y, r) {
