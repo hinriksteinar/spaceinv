@@ -24,6 +24,10 @@ Tank.prototype.update = function () {
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){
         this.cx += 7.5;
+
+
+
+
     }
     else {
         this.cx +=5.0;
