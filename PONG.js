@@ -47,6 +47,13 @@ function produceBadboys(){
   }
 }
 
+function turnAround(){
+  for(var i = 0; i < badguys.length; i++){
+    badguys[i].xVel *= -1;
+    badguys[i].cy += badguys[i].yVel;
+  }
+}
+
 
 // =============
 // GATHER INPUTS
