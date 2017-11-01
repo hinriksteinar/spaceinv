@@ -1,11 +1,11 @@
 
 
 
-function Sprite(image){
+function Sprite(image, width, height){
   this.image = image;
-  this.width = 40;
-  this.height = 20;
   //this.scale = 1;
+  this.width = width;
+  this.height = height;
 }
 
 Sprite.prototype.drawAt = function (ctx, x, y){
