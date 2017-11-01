@@ -6,7 +6,7 @@
 
 var g_images = {
 
-  enemy_1       : preloadIMG("enemy_1_lazer.png"),
+  enemy_1       : preloadIMG("enemy_1.png"),
   enemy_1_lazer : preloadIMG("enemy_1_lazer.png"),
   enemy_2       : preloadIMG("enemy_2.png"),
   enemy_2_lazer : preloadIMG("enemy_2_lazer.png"),
@@ -18,16 +18,22 @@ var g_images = {
 
 }
 
+
+// preloads and returns the image
+
 function preloadIMG(x) {
+
   var img = new Image(50,50);
   img.src = "images/" + x;
+
   return img;
+
 }
 
 var img = new Image(100,100);
 img.src = "images/tank.png";
 
-var img1 =new Image(100,100);
-img1.src = "images/invaders.png";
+//var img1 =new Image(100,100);
+//mg1.src = "images/invaders.png";
 
-var g_enemy = new Sprite(img);
+//var g_enemy = new Sprite(img);

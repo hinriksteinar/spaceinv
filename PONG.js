@@ -36,6 +36,23 @@ var tank = new Tank({
 
 });
 
+var badguys = [];
+
+function produceBadboys(){
+  console.log("hello");
+  for(var i = 0; i < 5; i++){
+    for(var j = 0; j < 5; j++){
+      badguys.push(new Enemy({
+        cx      : i*100,
+        cy      : j*100,
+        isAlive : true,
+        sprite  : new Sprite(g_images.enemy_1)
+      }));
+    }
+  }
+}
+
+
 // =============
 // GATHER INPUTS
 // =============
@@ -61,15 +78,20 @@ function updateSimulation(du) {
 // RENDER SIMULATION
 // =================
 
+
 function renderSimulation(ctx) {
     clearCanvas(ctx)
 
+
+    for(var i = 0; i < badguys.length; i++){
+      badguys[i].render(ctx);
+    }
     g_wall.render(ctx);
     g_wall2.render(ctx);
     g_wall3.render(ctx);
 
     tank.render(ctx);
-    ctx.drawImage(img, 0, 0, 100,100);
+    //ctx.drawImage(img, 0, 0, 100,100);
 
 
 
@@ -98,5 +120,5 @@ var KEY_RESTART  = 'H'.charCodeAt(0);
     }
 
 
-
+produceBadboys();
 g_main.init();

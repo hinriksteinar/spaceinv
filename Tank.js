@@ -5,6 +5,7 @@
 // COMMON TANK STUFF
 
 
+
 // A generic contructor which accepts an arbitrary descriptor object
 function Tank(descr) {
     for (var property in descr) {
