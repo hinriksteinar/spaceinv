@@ -57,7 +57,10 @@ function renderSimulation(ctx) {
     clearCanvas(ctx);
     ctx.fillStyle ="images/invaders.png";
 
-
+    g_wall.render(ctx);
+    g_wall2.render(ctx);
+    g_wall3.render(ctx);
+    
     g_paddle1.render(ctx);
 
 }
