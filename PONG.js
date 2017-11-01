@@ -19,7 +19,7 @@ var g_paddle1 = new Paddle({
     cy : 470,
     count : 0,
     countAdded : 10,
-    color: 'white',
+    color: 'black',
 
     GO_UP   : KEY_W,
     GO_DOWN : KEY_S,
@@ -55,10 +55,11 @@ function updateSimulation(du) {
 
 function renderSimulation(ctx) {
     clearCanvas(ctx);
+    ctx.fillStyle ="images/invaders.png";
 
 
     g_paddle1.render(ctx);
-    ctx.drawImage(g_spriteSheet,0,0,100,100);
+
 }
 
 var KEY_RESTART  = 'H'.charCodeAt(0);
