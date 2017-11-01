@@ -1,3 +1,6 @@
+
+
+
 function Sprite(image){
   this.image = image;
   this.width = 50;

@@ -1,12 +1,12 @@
 // ============
-// PADDLE STUFF
+// TANK STUFF
 // ============
 
-// COMMON PADDLE STUFF
+// COMMON TANK STUFF
 
 
 // A generic contructor which accepts an arbitrary descriptor object
-function Paddle(descr) {
+function Tank(descr) {
     for (var property in descr) {
         this[property] = descr[property];
     }
@@ -15,16 +15,15 @@ function Paddle(descr) {
 // Add these properties to the prototype, where they will serve as
 // shared defaults, in the absence of an instance-specific overrides.
 
-Paddle.prototype.halfWidth = 50;
-Paddle.prototype.halfHeight = 10;
+Tank.prototype.halfWidth = 50;
+Tank.prototype.halfHeight = 10;
 
-Paddle.prototype.update = function () {
+Tank.prototype.update = function () {
 
 
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){
         this.cx += 7.5;
-        
     }
     else {
         this.cx +=4.0;
@@ -43,26 +42,28 @@ Paddle.prototype.update = function () {
 
 };
 
-Paddle.prototype.render = function (ctx) {
+Tank.prototype.render = function (ctx) {
     // (cx, cy) is the centre; must offset it for drawing
     //ctx.fillStyle = this.color;
-    g_enemy.drawAt(ctx,
+    this.sprite.drawAt(ctx,
                  this.cx,
                  this.cy);
     ctx.font="bold 40px Arial";
     ctx.fillStyle= 'white';
     ctx.fillText('Score',20,35);
-    ctx.fillText(g_paddle1.count.toString(),150,35);
+    ctx.fillText(tank.count.toString(),150,35);
 };
 
-Paddle.prototype.collidesWith = function (prevX, prevY,
+Tank.prototype.collidesWith = function (prevX, prevY,
                                           nextX, nextY,
                                           r) {
-    var paddleEdge = this.cy;
+    var tankEdge = this.cy;
 
-    if ((prevY +r <= paddleEdge && nextY +r> paddleEdge) || (prevY - r >paddleEdge && nextY - r <=paddleEdge)){
+    if ((prevY +r <= tankEdge && nextY +r> tankEdge) ||
+     (prevY - r >tankEdge && nextY - r <=tankEdge)){
 
-        if(nextX >= this.cx - this.halfWidth && nextX <=this.cx + this.halfWidth ){
+        if(nextX >= this.cx - this.halfWidth &&
+           nextX <=this.cx + this.halfWidth ){
             return true;
         }
     }

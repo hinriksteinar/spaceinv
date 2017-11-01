@@ -6,25 +6,29 @@ var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
-// PADDLE 1
+// TANK 1
 
 var KEY_W = 'W'.charCodeAt(0);
 var KEY_S = 'S'.charCodeAt(0);
 var KEY_A = 'A'.charCodeAt(0);
 var KEY_D = 'D'.charCodeAt(0);
+var KEY_SOME = 'K'.charCodeAt(0);
 
 
-var g_paddle1 = new Paddle({
+var tank = new Tank({
     cx : 400,
     cy : 470,
     count : 0,
     countAdded : 10,
     color: 'black',
+    sprite : new Sprite(g_images.tank),
 
     GO_UP   : KEY_W,
     GO_DOWN : KEY_S,
     GO_RIGHT: KEY_D,
     GO_LEFT : KEY_A,
+    GO_FAST : KEY_SOME,
+
 
 });
 
@@ -45,7 +49,7 @@ function updateSimulation(du) {
 
 
 
-    g_paddle1.update(du);
+    tank.update(du);
 
 }
 
@@ -60,7 +64,7 @@ function renderSimulation(ctx) {
     g_wall2.render(ctx);
     g_wall3.render(ctx);
 
-    g_paddle1.render(ctx);
+    tank.render(ctx);
     ctx.drawImage(img, 0, 0, 100,100);
 
 
@@ -75,16 +79,16 @@ var KEY_RESTART  = 'H'.charCodeAt(0);
     document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
 
     document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
-    document.getElementById("yourscore").innerHTML = g_paddle1.count;
+    document.getElementById("yourscore").innerHTML = tank.count;
 
-    if(g_paddle1.count > possHighScore){
+    if(tank.count > possHighScore){
 
 
-        localStorage.setItem("breakouthighscore", g_paddle1.count);
+        localStorage.setItem("breakouthighscore", tank.count);
         document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
 
     }
-        g_paddle1.count = 0;
+        tank.count = 0;
         g_isUpdatePaused = false;
 
     }
