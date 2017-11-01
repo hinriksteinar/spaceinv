@@ -35,11 +35,11 @@ var badguys = [];
 
 function produceBadboys(){
   console.log("hello");
-  for(var i = 0; i < 10; i++){
+  for(var i = 0; i < 12; i++){
     for(var j = 0; j < 5; j++){
       badguys.push(new Enemy({
-        cx      : i*70,
-        cy      : j*70,
+        cx      : i*45,
+        cy      : j*45,
         isAlive : true,
         sprite  : new Sprite(g_images.enemy_1)
       }));
