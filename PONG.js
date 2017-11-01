@@ -61,7 +61,11 @@ function renderSimulation(ctx) {
     g_wall3.render(ctx);
     
     g_paddle1.render(ctx);
+<<<<<<< HEAD
+    ctx.drawImage(img, 0, 0, 100,100);
+=======
 
+>>>>>>> 845d4924f356fa779ea002552de092d8e0a2c46a
 }
 
 var KEY_RESTART  = 'H'.charCodeAt(0);
