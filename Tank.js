@@ -5,6 +5,7 @@
 // COMMON TANK STUFF
 
 
+
 // A generic contructor which accepts an arbitrary descriptor object
 function Tank(descr) {
     for (var property in descr) {
@@ -24,6 +25,10 @@ Tank.prototype.update = function () {
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){
         this.cx += 7.5;
+
+
+
+
     }
     else {
         this.cx +=5.0;
@@ -48,7 +53,10 @@ Tank.prototype.render = function (ctx) {
     this.sprite.drawAt(ctx,
                  this.cx-this.halfWidth,
                  this.cy-this.halfHeight);
-
+    ctx.font="bold 40px Arial";
+    ctx.fillStyle= 'white';
+    ctx.fillText('Score',20,35);
+    ctx.fillText(tank.count.toString(),150,35);
 };
 
 Tank.prototype.collidesWith = function (prevX, prevY,

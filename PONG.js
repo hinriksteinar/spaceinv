@@ -6,6 +6,8 @@ var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
+
+
 // TANK 1
 
 var KEY_W = 'W'.charCodeAt(0);
@@ -18,11 +20,6 @@ var KEY_SOME = 'K'.charCodeAt(0);
 var tank = new Tank({
     cx : 400,
     cy : 470,
-    width : 50,
-    height: 50,
-    count : 0,
-    countAdded : 10,
-    color: 'black',
     sprite : new Sprite(g_images.tank),
 
     GO_UP   : KEY_W,
@@ -38,11 +35,11 @@ var badguys = [];
 
 function produceBadboys(){
   console.log("hello");
-  for(var i = 0; i < 5; i++){
+  for(var i = 0; i < 10; i++){
     for(var j = 0; j < 5; j++){
       badguys.push(new Enemy({
-        cx      : i*100,
-        cy      : j*100,
+        cx      : i*70,
+        cy      : j*70,
         isAlive : true,
         sprite  : new Sprite(g_images.enemy_1)
       }));
