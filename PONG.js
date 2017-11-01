@@ -20,7 +20,7 @@ var KEY_SOME = 'K'.charCodeAt(0);
 var tank = new Tank({
     cx : 400,
     cy : 470,
-    sprite : new Sprite(g_images.tank),
+    sprite : new Sprite(g_images.tank, 50, 50),
 
     GO_UP   : KEY_W,
     GO_DOWN : KEY_S,
@@ -35,13 +35,13 @@ var badguys = [];
 
 function produceBadboys(){
   console.log("hello");
-  for(var i = 0; i < 12; i++){
-    for(var j = 0; j < 5; j++){
+  for(var i = 0; i < 16; i++){
+    for(var j = 0; j < 7; j++){
       badguys.push(new Enemy({
-        cx      : i*45,
-        cy      : j*45,
+        cx      : i*30,
+        cy      : j*30,
         isAlive : true,
-        sprite  : new Sprite(g_images.enemy_1)
+        sprite  : new Sprite(g_images.enemy_1, 25, 25)
       }));
     }
   }
