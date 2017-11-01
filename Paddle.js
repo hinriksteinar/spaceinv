@@ -26,7 +26,7 @@ Paddle.prototype.update = function () {
         this.cx += 7.5;
     }
     else {
-        this.cx +=5.0;
+        this.cx +=4.0;
     }
 
     }
@@ -36,7 +36,7 @@ Paddle.prototype.update = function () {
         this.cx -= 7.5;
     }
         else {
-            this.cx -= 5.0;
+            this.cx -= 4.0;
         }
     }
 
