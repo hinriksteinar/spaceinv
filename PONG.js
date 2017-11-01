@@ -69,6 +69,9 @@ function updateSimulation(du) {
 
 
     tank.update(du);
+    for(var i = 0; i < badguys.length; i++){
+      badguys[i].update();
+    }
 
 }
 

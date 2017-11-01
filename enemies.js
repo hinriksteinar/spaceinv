@@ -7,6 +7,7 @@ function Enemy(descr) {
     for (var property in descr) {
         this[property] = descr[property];
     }
+
 }
 
 Enemy.prototype.render = function(ctx){
@@ -17,5 +18,8 @@ Enemy.prototype.render = function(ctx){
 
 
 Enemy.prototype.update = function () {
+
+  this.cx += 0.75;
+
 
 }
