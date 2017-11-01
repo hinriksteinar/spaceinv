@@ -1,6 +1,6 @@
 var g_wall = {
  yBase : 400,
- xBase : 200,
+ xBase : 132,
  bricksLeft : true,
 
   brickWidth : 10,
@@ -23,7 +23,7 @@ var g_wall = {
 };
 var g_wall2 = {
  yBase : 400,
- xBase : 350,
+ xBase : 354,
  bricksLeft : true,
 
   brickWidth : 10,
@@ -47,7 +47,7 @@ var g_wall2 = {
 };
 var g_wall3 = {
  yBase : 400,
- xBase : 600,
+ xBase : 576,
  bricksLeft : true,
 
   brickWidth : 10,
