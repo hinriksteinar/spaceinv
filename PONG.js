@@ -18,6 +18,8 @@ var KEY_SOME = 'K'.charCodeAt(0);
 var tank = new Tank({
     cx : 400,
     cy : 470,
+    width : 50,
+    height: 50,
     count : 0,
     countAdded : 10,
     color: 'black',
