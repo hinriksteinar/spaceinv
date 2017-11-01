@@ -56,7 +56,10 @@ function updateSimulation(du) {
 function renderSimulation(ctx) {
     clearCanvas(ctx)
 
-
+    g_wall.render(ctx);
+    g_wall2.render(ctx);
+    g_wall3.render(ctx);
+    
     g_paddle1.render(ctx);
 
 }
