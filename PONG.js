@@ -58,7 +58,7 @@ function renderSimulation(ctx) {
 
 
     g_paddle1.render(ctx);
-    ctx.drawImage(g_spriteSheet,0,0,100,100);
+    ctx.drawImage(img, 0, 0, 100,100);
 }
 
 var KEY_RESTART  = 'H'.charCodeAt(0);
