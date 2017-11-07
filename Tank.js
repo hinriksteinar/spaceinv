@@ -21,17 +21,19 @@ Tank.prototype.halfHeight = 25;
 Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
 
 
+
 var bullets = [];
 
 
 Tank.prototype.update = function () {
 
-    if(g_keys[this.KEY_FIRE]){
+    if(g_keys[this.KEY_FIRE] && !g_shotsFired){
+      g_shotsFired = true;
       bullets.push(new Bullet({
         cx : this.cx,
         cy : this.cy,
-        velY : 1,
-        sprite : new Sprite(g_images.tank_missile, 5,5)
+        velY : 4,
+        sprite : new Sprite(g_images.tank_missile, 5,20)
       }));
     }
 
