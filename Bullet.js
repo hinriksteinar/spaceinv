@@ -20,6 +20,10 @@ function Bullet(descr) {
         this[property] = descr[property];
     }
 
+    //this.halfWidth = this.width/2;
+    //this.halfHeight = this.height/2;
+    this.x2 = this.cx + this.width;
+    this.y2 = this.cy + this.height;
 }
 
 // Initial, inheritable, default values
@@ -42,19 +46,40 @@ Bullet.prototype.update = function (du) {
     // TODO: Implement this
 
 
+    this.collidesWith();
 
-
-    if(this.cy < 100){
+    if(this.cy < 0){
       bullets.splice(bullets.indexOf(this),1);
       g_shotsFired = false;
     }
 
+
+
     this.cy -= this.velY;
+
+
 
 };
 
 
 Bullet.prototype.collidesWith = function () {
+    /*if(nextY > highestY) {
+      return;
+    }*/
+
+    for(var i = 0; i < badguys.length; i++){
+      var a = badguys[i];
+      var b = this;
+      if(a.cx < b.x2 && a.x2 > b.cx && a.cy < b.y2 && a.y2 > b.cy){
+        console.log("hello");
+        badguys.splice(i,1);
+        bullets.splice(bullets.indexOf(b),1);
+        g_shotsFired = false;
+
+      }
+    }
+
+
 
 }
 
