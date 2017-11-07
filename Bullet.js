@@ -22,6 +22,7 @@ function Bullet(descr) {
 
 }
 
+
 // Initial, inheritable, default values
 //
 // (You might want these to assist with early testing,
@@ -39,12 +40,7 @@ var g_shotsFired = false;
 
 Bullet.prototype.update = function (du) {
 
-    // TODO: Implement this
-
-
-
-
-    if(this.cy < 100){
+    if(this.cy < 0){
       bullets.splice(bullets.indexOf(this),1);
       g_shotsFired = false;
     }
