@@ -18,9 +18,22 @@ function Tank(descr) {
 
 Tank.prototype.halfWidth = 25;
 Tank.prototype.halfHeight = 25;
+Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
+
+
+var bullets = [];
+
 
 Tank.prototype.update = function () {
 
+    if(g_keys[this.KEY_FIRE]){
+      bullets.push(new Bullet({
+        cx : this.cx,
+        cy : this.cy,
+        velY : 1,
+        sprite : new Sprite(g_images.tank_missile, 5,5)
+      }));
+    }
 
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){

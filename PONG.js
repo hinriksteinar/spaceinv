@@ -77,6 +77,10 @@ function updateSimulation(du) {
       badguys[i].update();
     }
 
+    for(var i = 0; i < bullets.length; i++){
+      bullets[i].update();
+    }
+
 }
 
 // =================
@@ -90,6 +94,10 @@ function renderSimulation(ctx) {
 
     for(var i = 0; i < badguys.length; i++){
       badguys[i].render(ctx);
+    }
+
+    for(var i = 0; i < bullets.length; i++){
+      bullets[i].render(ctx);
     }
     g_wall.render(ctx);
     g_wall2.render(ctx);
