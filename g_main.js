@@ -55,6 +55,7 @@ g_main._iterCore = function (dt) {
     gatherInputs();
     update(dt);
     render(g_ctx);
+
 };
 
 g_main._isGameOver = false;

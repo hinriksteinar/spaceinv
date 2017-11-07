@@ -21,29 +21,27 @@ Tank.prototype.halfHeight = 25;
 Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
 
 
-
+var bullets = [];
 
 
 Tank.prototype.update = function () {
 
-    if(g_keys[this.KEY_FIRE] && !g_shotsFired){
-    //  g_shotsFired = true;
+    if(g_keys[this.KEY_FIRE]){
+      document.getElementById('shoot').play();
+
       bullets.push(new Bullet({
         cx : this.cx,
         cy : this.cy,
-        width : 5,
-        height: 20,
-        velY : 4,
-        sprite : new Sprite(g_images.tank_missile, 5,20)
+        velY : 1,
+        sprite : new Sprite(g_images.tank_missile, 5,5)
       }));
     }
 
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){
+
         this.cx += 7.5;
-
-
-
+        document.getElementById('move').play();
 
     }
     else {
@@ -55,6 +53,8 @@ Tank.prototype.update = function () {
     else if(g_keys[this.GO_LEFT] && this.cx - this.halfWidth > 0){
                 if(g_keys[this.GO_FAST]){
         this.cx -= 7.5;
+        document.getElementById('move').play();
+
     }
         else {
             this.cx -= 5.0;
