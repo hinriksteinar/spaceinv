@@ -7,8 +7,8 @@ function Enemy(descr) {
     for (var property in descr) {
         this[property] = descr[property];
     }
-    this.halfWidth = this.width/2;
-    this.halfHeight = this.height/2;
+    this.x2 = this.cx + this.width;
+    this.y2 = this.cy + this.height;
     this.xVel = 0.75;
     this.yVel = 50;
 
@@ -16,8 +16,8 @@ function Enemy(descr) {
 
 Enemy.prototype.render = function(ctx){
   // STUFF
-  this.sprite.drawAt(ctx, this.cx-this.halfWidth,
-                          this.cy-this.halfHeight);
+  this.sprite.drawAt(ctx, this.cx,
+                          this.cy);
 
 }
 
