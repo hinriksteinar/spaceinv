@@ -33,6 +33,10 @@ function preloadIMG(x) {
 var img = new Image(100,100);
 img.src = "images/tank.png";
 
+
+var badguys = [];
+
+var bullets = [];
 //var img1 =new Image(100,100);
 //mg1.src = "images/invaders.png";
 

@@ -19,7 +19,16 @@ function Bullet(descr) {
     for (var property in descr) {
         this[property] = descr[property];
     }
+
+<<<<<<< HEAD
+    this.halfWidth = this.width/2;
+    this.halfHeight = this.height/2;
+    this.x2 = this.cx + this.width;
+    this.y2 = this.cy + this.height;
+=======
+>>>>>>> 6eaff3ab19ccc9ce894c898de02e02be63f4f925
 }
+
 
 // Initial, inheritable, default values
 //
@@ -31,17 +40,26 @@ Bullet.prototype.cx = 200;
 Bullet.prototype.cy = 200;
 Bullet.prototype.velX = 1;
 Bullet.prototype.velY = 1;*/
-
+var g_shotsFired = false;
 
 // Convert times from seconds to "nominal" time units.
 
 
 Bullet.prototype.update = function (du) {
 
-    // TODO: Implement this
+    if(this.cy < 0){
+      bullets.splice(bullets.indexOf(this),1);
+      g_shotsFired = false;
+    }
+
     this.cy -= this.velY;
 
 };
+
+
+Bullet.prototype.collidesWith = function () {
+
+}
 
 
 

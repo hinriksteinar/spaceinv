@@ -31,15 +31,16 @@ var tank = new Tank({
 
 });
 
-var badguys = [];
+
 
 function produceBadboys(){
-  console.log("hello");
   for(var i = 0; i < 16; i++){
     for(var j = 0; j < 7; j++){
       badguys.push(new Enemy({
         cx      : i*30,
         cy      : j*30,
+        width   : 25,
+        height  : 25,
         isAlive : true,
         sprite  : new Sprite(g_images.enemy_1, 25, 25)
       }));
@@ -53,6 +54,8 @@ function turnAround(){
     badguys[i].cy += badguys[i].yVel;
   }
 }
+
+
 
 
 // =============
@@ -69,7 +72,6 @@ function gatherInputs() {
 // =================
 
 function updateSimulation(du) {
-
 
 
     tank.update(du);
