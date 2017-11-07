@@ -20,15 +20,10 @@ function Bullet(descr) {
         this[property] = descr[property];
     }
 
-<<<<<<< HEAD
     this.halfWidth = this.width/2;
     this.halfHeight = this.height/2;
-    this.x2 = this.cx + this.width;
-    this.y2 = this.cy + this.height;
-=======
->>>>>>> 6eaff3ab19ccc9ce894c898de02e02be63f4f925
+    this.cx -= this.halfWidth;
 }
-
 
 // Initial, inheritable, default values
 //
@@ -47,17 +42,33 @@ var g_shotsFired = false;
 
 Bullet.prototype.update = function (du) {
 
+    // TODO: Implement this
+
+
+    this.collidesWith();
+
     if(this.cy < 0){
       bullets.splice(bullets.indexOf(this),1);
       g_shotsFired = false;
     }
 
+
+
     this.cy -= this.velY;
+
+
 
 };
 
 
 Bullet.prototype.collidesWith = function () {
+
+    for(var i = 0; i < badguys.length; i++){
+      var a = badguys[i];
+      if(this.cy <= a.cy+a.halfHeight )
+    }
+
+
 
 }
 
