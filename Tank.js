@@ -29,8 +29,8 @@ Tank.prototype.update = function () {
     if(g_keys[this.KEY_FIRE] && !g_shotsFired){
     //  g_shotsFired = true;
       bullets.push(new Bullet({
-        cx : this.cx-this.halfWidth,
-        cy : this.cy-this.halfHeight,
+        cx : this.cx,
+        cy : this.cy,
         width : 5,
         height: 20,
         velY : 4,
