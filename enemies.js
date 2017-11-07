@@ -7,6 +7,8 @@ function Enemy(descr) {
     for (var property in descr) {
         this[property] = descr[property];
     }
+    this.x2 = this.cx + this.width;
+    this.y2 = this.cy + this.height;
     this.xVel = 0.75;
     this.yVel = 50;
 

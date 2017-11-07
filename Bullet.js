@@ -20,6 +20,10 @@ function Bullet(descr) {
         this[property] = descr[property];
     }
 
+    //this.halfWidth = this.width/2;
+    //this.halfHeight = this.height/2;
+    this.x2 = this.cx + this.width;
+    this.y2 = this.cy + this.height;
 }
 
 
@@ -40,17 +44,46 @@ var g_shotsFired = false;
 
 Bullet.prototype.update = function (du) {
 
+<<<<<<< HEAD
+=======
+    // TODO: Implement this
+
+
+    this.collidesWith();
+
+>>>>>>> 6be0ccbc1af4373ea79c2156dc36f712366adf1c
     if(this.cy < 0){
       bullets.splice(bullets.indexOf(this),1);
       g_shotsFired = false;
     }
 
+
+
     this.cy -= this.velY;
+
+
 
 };
 
 
 Bullet.prototype.collidesWith = function () {
+    /*if(nextY > highestY) {
+      return;
+    }*/
+
+    for(var i = 0; i < badguys.length; i++){
+      var a = badguys[i];
+      var b = this;
+      if(a.cx < b.x2 && a.x2 > b.cx && a.cy < b.y2 && a.y2 > b.cy){
+        console.log("hello");
+        badguys.splice(i,1);
+        bullets.splice(bullets.indexOf(b),1);
+        g_shotsFired = false;
+
+      }
+    }
+
+
 
 }
 

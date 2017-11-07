@@ -22,16 +22,17 @@ Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
 
 
 
-var bullets = [];
 
 
 Tank.prototype.update = function () {
 
     if(g_keys[this.KEY_FIRE] && !g_shotsFired){
-      g_shotsFired = true;
+    //  g_shotsFired = true;
       bullets.push(new Bullet({
-        cx : this.cx,
-        cy : this.cy,
+        cx : this.cx-this.halfWidth,
+        cy : this.cy-this.halfHeight,
+        width : 5,
+        height: 20,
         velY : 4,
         sprite : new Sprite(g_images.tank_missile, 5,20)
       }));
