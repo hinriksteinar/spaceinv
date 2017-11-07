@@ -1,7 +1,3 @@
-// ===========
-// SOUND STUFF
-// ===========
-
 var sounds = {
   "backgroundsound": {
     url : '../Sound/X-Files-Illuminati-Song.mp3',

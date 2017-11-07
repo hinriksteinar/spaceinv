@@ -114,6 +114,7 @@ var KEY_RESTART  = 'H'.charCodeAt(0);
 
 
     if(g_keys[KEY_RESTART]){
+      console.log("hello");
             var possHighScore = localStorage.getItem('breakouthighscore') || 0;
     document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
 

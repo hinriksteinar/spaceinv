@@ -4,7 +4,7 @@
 
 // COMMON TANK STUFF
 
-
+"use strict";
 
 // A generic contructor which accepts an arbitrary descriptor object
 function Tank(descr) {
@@ -27,6 +27,8 @@ var bullets = [];
 Tank.prototype.update = function () {
 
     if(g_keys[this.KEY_FIRE]){
+      document.getElementById('shoot').play();
+
       bullets.push(new Bullet({
         cx : this.cx,
         cy : this.cy,
@@ -37,10 +39,9 @@ Tank.prototype.update = function () {
 
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){
+
         this.cx += 7.5;
-
-
-
+        document.getElementById('move').play();
 
     }
     else {
@@ -52,6 +53,8 @@ Tank.prototype.update = function () {
     else if(g_keys[this.GO_LEFT] && this.cx - this.halfWidth > 0){
                 if(g_keys[this.GO_FAST]){
         this.cx -= 7.5;
+        document.getElementById('move').play();
+
     }
         else {
             this.cx -= 5.0;
