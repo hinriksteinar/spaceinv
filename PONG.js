@@ -36,19 +36,60 @@ var tank = new Tank({
 //eins með cx cy isalive,
 function produceBadboys(){
 
-  for(var i = 0; i < 16; i++){
     for(var j = 0; j < 7; j++){
-      badguys.push(new Enemy({
-        cx      : i*30,
-        cy      : j*30,
-        width   : 25,
-        height  : 25,
-        isAlive : true,
-        sprite  : new Sprite(g_images.enemy_1, 25, 25)
-      }));
+      for(var i = 0; i < 16; i++){
+        if(j%2 == 0){
+          pushEnemy2(i,j);
+        }
+        else if(j%3 == 0){
+          pushEnemy3(i,j);
+        }
+        else{
+          pushEnemy1(i,j);
+        }
     }
   }
 }
+
+function pushEnemy1(i,j){
+  badguys.push(new Enemy({
+    cx      : i*30,
+    cy      : j*30,
+    width   : 25,
+    height  : 25,
+    isAlive : true,
+    sprite  : new Sprite(g_images.enemy_1, 25, 25),
+    lazer   : new Sprite(g_images.enemy_1_lazer, 5, 20)
+  }));
+}
+
+function pushEnemy2(i,j){
+
+  badguys.push(new Enemy({
+    cx      : i*30,
+    cy      : j*30,
+    width   : 25,
+    height  : 25,
+    isAlive : true,
+    sprite  : new Sprite(g_images.enemy_2, 25, 25),
+    lazer   : new Sprite(g_images.enemy_2_lazer, 5, 20)
+  }));
+}
+
+function pushEnemy3(i,j){
+  badguys.push(new Enemy({
+    cx      : i*30,
+    cy      : j*30,
+    width   : 25,
+    height  : 25,
+    isAlive : true,
+    sprite  : new Sprite(g_images.enemy_3, 25, 25),
+    lazer   : new Sprite(g_images.enemy_3_lazer, 5, 20)
+  }));
+
+}
+
+
 // lætur enemies fara til baka
 function turnAround(){
   for(var i = 0; i < badguys.length; i++){
@@ -76,9 +117,10 @@ function updateSimulation(du) {
 
 
 
-    tank.update(du);
+    tank.update();
     for(var i = 0; i < badguys.length; i++){
       badguys[i].update(du);
+      //console.log(du);
     }
 
     for(var i = 0; i < bullets.length; i++){
