@@ -118,9 +118,12 @@ function updateSimulation(du) {
 
 
     tank.update();
+    for(var i = 0; i < explosions.length; i++){
+      explosions[i].update();
+    }
     for(var i = 0; i < badguys.length; i++){
       badguys[i].update(du);
-      //console.log(du);
+      console.log(du);
     }
 
     for(var i = 0; i < bullets.length; i++){
@@ -137,7 +140,9 @@ function updateSimulation(du) {
 function renderSimulation(ctx) {
     clearCanvas(ctx)
 
-
+    for(var i = 0; i < explosions.length; i++){
+      explosions[i].render();
+    }
     for(var i = 0; i < badguys.length; i++){
       badguys[i].render(ctx);
     }

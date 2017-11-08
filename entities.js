@@ -36,6 +36,8 @@ img.src = "images/tank.png";
 
 var badguys = [];
 
+var explosions = [];
+
 var lazers  = [];
 
 var bullets = [];

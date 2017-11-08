@@ -67,10 +67,7 @@ Bullet.prototype.collidesWith = function () {
        if(nextY - this.height/2 < a.cy+a.height && this.cx >= a.cx-a.width
                                   && this.cx <= a.cx + a.width){
 
-         console.log("a.cx: " + a.cx);
-         console.log("a.cy: " + a.cy);
-         console.log("a.width: " + a.width);
-         console.log("a.height: " + a.height);
+        explode(a.cx, a.cy);                                
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
          g_shotsFired = false;
