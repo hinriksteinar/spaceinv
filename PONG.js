@@ -26,36 +26,34 @@ var tank = new Tank({
     GO_DOWN : KEY_S,
     GO_RIGHT: KEY_D,
     GO_LEFT : KEY_A,
-    GO_FAST : KEY_SOME,
-
-
+    GO_FAST : KEY_SOME
 });
 
-
-
+var badguys = [];
+//hér skilgreinum við width  til að geta notað annarstaðar this.width
+//eins með cx cy isalive, 
 function produceBadboys(){
+  console.log("hello");
   for(var i = 0; i < 16; i++){
     for(var j = 0; j < 7; j++){
       badguys.push(new Enemy({
         cx      : i*30,
         cy      : j*30,
-        width   : 25,
-        height  : 25,
+        width   : 0,
+        height  : 0,
         isAlive : true,
         sprite  : new Sprite(g_images.enemy_1, 25, 25)
       }));
     }
   }
 }
-
+// lætur enemies fara til baka
 function turnAround(){
   for(var i = 0; i < badguys.length; i++){
     badguys[i].xVel *= -1;
     badguys[i].cy += badguys[i].yVel;
   }
 }
-
-
 
 
 // =============
@@ -72,6 +70,7 @@ function gatherInputs() {
 // =================
 
 function updateSimulation(du) {
+
 
 
     tank.update(du);
@@ -99,6 +98,10 @@ function renderSimulation(ctx) {
     }
 
     for(var i = 0; i < bullets.length; i++){
+      //hugsanlega þarf að setja if setingu hér til að láta koma eina kúlu þegar ýtt er á key_fire
+      // if setting seð að ýtir einu [i] af stað
+
+
       bullets[i].render(ctx);
     }
     g_wall.render(ctx);

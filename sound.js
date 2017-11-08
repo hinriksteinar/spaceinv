@@ -1,3 +1,6 @@
+// bætti við því það var búið að bæta við neðar sounds1 
+var sounds1 ={};
+
 var sounds = {
   "backgroundsound": {
     url : '../Sound/X-Files-Illuminati-Song.mp3',
@@ -43,11 +46,11 @@ var sounds = {
     url : '../Sound/fastinvader.wav',
     volume : .05
   },
-  {
+
     "bump": {
     url : "https://freesound.org/data/previews/118/118649_2139651-lq.mp3",
     volume : .05
-  }}
+  }
 };
 
 // kalla úr annari skrá t.d playSound('bomb'); sem dæmi
@@ -60,7 +63,7 @@ for(var key in sounds) {
 function loadSound(name){
   var sound = sounds[name];
   var url = sound.url;
-  var sound1 = sounds1[name];
+  var sound1 = sounds[name];
   var url1 = sound1.url;
   var buffer = sound.buffer;
 
@@ -73,8 +76,8 @@ function loadSound(name){
       sound.buffer = newBuffer;
     });
   }
-
-  request.send();
+//commentaði út því að þetta kemur með error
+//  request.send();
 }
 
 function playSound(name, options){
