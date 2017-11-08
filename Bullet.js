@@ -20,13 +20,11 @@ function Bullet(descr) {
         this[property] = descr[property];
     }
 
-<<<<<<< HEAD
     this.halfWidth = this.width/2;
     this.halfHeight = this.height/2;
     this.x2 = this.cx + this.width;
     this.y2 = this.cy + this.height;
-=======
->>>>>>> 6eaff3ab19ccc9ce894c898de02e02be63f4f925
+
 }
 
 

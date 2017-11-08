@@ -26,14 +26,11 @@ Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
 
 Tank.prototype.update = function () {
 
-<<<<<<< HEAD
     if(g_keys[this.KEY_FIRE]){
       document.getElementById('shoot').play();
 
-=======
     if(g_keys[this.KEY_FIRE] && !g_shotsFired){
     //  g_shotsFired = true;
->>>>>>> 30df79da00ec101f6b0d137239e1c5112f715ae1
       bullets.push(new Bullet({
         cx : this.cx,
         cy : this.cy,
