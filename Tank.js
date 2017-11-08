@@ -21,14 +21,19 @@ Tank.prototype.halfHeight = 25;
 Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
 
 
-var bullets = [];
 
 
 Tank.prototype.update = function () {
 
+    
+
+
+
     if(g_keys[this.KEY_FIRE] && !g_shotsFired){
       g_shotsFired = true;
       shoot_from_spaceship.play();
+
+
       bullets.push(new Bullet({
         cx : this.cx,
         cy : this.cy,
@@ -72,20 +77,4 @@ Tank.prototype.render = function (ctx) {
     this.sprite.drawAt(ctx,
                  this.cx-this.halfWidth,
                  this.cy-this.halfHeight);
-};
-
-Tank.prototype.collidesWith = function (prevX, prevY,
-                                          nextX, nextY,
-                                          r) {
-    var tankEdge = this.cy;
-
-    if ((prevY +r <= tankEdge && nextY +r> tankEdge) ||
-     (prevY - r >tankEdge && nextY - r <=tankEdge)){
-
-        if(nextX >= this.cx - this.halfWidth &&
-           nextX <=this.cx + this.halfWidth ){
-            return true;
-        }
-    }
-    return false;
 };
