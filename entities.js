@@ -41,3 +41,5 @@ var explosions = [];
 var lazers  = [];
 
 var bullets = [];
+
+var walls = [];

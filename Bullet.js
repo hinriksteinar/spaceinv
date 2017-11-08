@@ -46,7 +46,7 @@ Bullet.prototype.update = function (du) {
     // TODO: Implement this
 
 
-    this.collidesWith();
+    this.collidesWithEnemy();
 
     if(this.cy < 0){
       bullets.splice(bullets.indexOf(this),1);
@@ -57,17 +57,17 @@ Bullet.prototype.update = function (du) {
 };
 
 
-Bullet.prototype.collidesWith = function () {
+Bullet.prototype.collidesWithEnemy = function () {
 
 
 
      var nextY = this.cy - this.velY;
      for(var i = 0; i < badguys.length; i++){
        var a = badguys[i];
-       if(nextY - this.height/2 < a.cy+a.height && this.cx >= a.cx-a.width
-                                  && this.cx <= a.cx + a.width){
+       if(nextY - this.height/2 < a.cy+a.height/2 && this.cx >= a.cx-a.width/2
+                                  && this.cx <= a.cx + a.width/2 && nextY + this.height/2 > a.cy-a.height/2){
 
-        explode(a.cx, a.cy);                                
+        explode(a.cx, a.cy);
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
          g_shotsFired = false;
@@ -77,27 +77,7 @@ Bullet.prototype.collidesWith = function () {
        }
      }
 
-  /*  for(var i = 0; i < badguys.length; i++){
-      var a = badguys[i];
-      var aCheck = a.cx < this.x2;
-      var bCheck = a.x2 > this.cx;
-      var cCheck = a.cy < this.y2;
-      var dCheck = a.y2 > this.cy;
-      //console.log(aCheck);
-      //console.log(bCheck);
-      //console.log(cCheck);
-      //console.log(dCheck);
-      if( aCheck && bCheck && cCheck && dCheck ) {
-
-        badguys.splice(badguys.indexOf(a),1);
-        bullets.splice(bullets.indexOf(this),1);
-        g_shotsFired = false;
-        return;
-
-      }
-    }*/
 };
-
 
 
 Bullet.prototype.render = function (ctx) {
