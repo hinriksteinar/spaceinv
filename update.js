@@ -43,6 +43,8 @@ function update(dt) {
     //
 
     var du = (dt / NOMINAL_UPDATE_INTERVAL);
+    //console.log("du" + du);
+
     //console.log(du);
     updateSimulation(du);
 

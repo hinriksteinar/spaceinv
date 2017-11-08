@@ -36,8 +36,6 @@ img.src = "images/tank.png";
 
 var badguys = [];
 
-var bullets = [];
-//var img1 =new Image(100,100);
-//mg1.src = "images/invaders.png";
+var lazers  = [];
 
-//var g_enemy = new Sprite(img);
+var bullets = [];
