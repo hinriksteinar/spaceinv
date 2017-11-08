@@ -1,106 +1,109 @@
-// bætti við því það var búið að bæta við neðar sounds1 
-var sounds1 ={};
+// JellySoundInstace sýnir hve oft kóðin reynir að spila lagið þegar ýtt er á takka
+var JellySoundInstace = 0;
+var JellySound = function( audiofile )
+    {
 
-var sounds = {
-  "backgroundsound": {
-    url : '../Sound/X-Files-Illuminati-Song.mp3',
-    volume : .05
-  },
-  "bomb": {
-    url : '../Sound/explosion.wav',
-    volume : .05
-  },
-    "bomb2": {
-    url : '../Sound/explosion2.wav',
-    volume : .05
-  },
-    "invaderkilled": {
-    url : '../Sound/invaderkilled.wav',
-    volume : .05
-  },
-    "shoot": {
-    url : '../Sound/shoot.wav',
-    volume : .05
-  },
-    "ufo_highpitch": {
-    url : '../Sound/ufo_highpitch.wav',
-    volume : .05
-  },
-    "ufo_lowpitch": {
-    url : '../Sound/ufo_lowpitch.wav',
-    volume : .05
-  },
-    "fastinvader": {
-    url : '../Sound/fastinvader.wav',
-    volume : .05
-  },
-    "fastinvader": {
-    url : '../Sound/fastinvader2.wav',
-    volume : .05
-  },
-    "fastinvader3": {
-    url : '../Sound/fastinvader.wav',
-    volume : .05
-  },
-    "fastinvader4": {
-    url : '../Sound/fastinvader.wav',
-    volume : .05
-  },
+    //hve mörg hljóð koma í einum smelli
+    var overlapMax = 3;
 
-    "bump": {
-    url : "https://freesound.org/data/previews/118/118649_2139651-lq.mp3",
-    volume : .05
-  }
-};
 
-// kalla úr annari skrá t.d playSound('bomb'); sem dæmi
 
-var soundContext = new AudioContext();
+    var tracks = new Array();
+    var soundID = "jellysound" + JellySoundInstace++;
+    var track = 0;
 
-for(var key in sounds) {
-  loadSound(key);
-}
-function loadSound(name){
-  var sound = sounds[name];
-  var url = sound.url;
-  var sound1 = sounds[name];
-  var url1 = sound1.url;
-  var buffer = sound.buffer;
 
-  var request = new XMLHttpRequest();
-  request.open('GET', url, true);
-  request.responseType = 'arraybuffer';
+    this.load = function( audiofile )
+        {
+        var i;
+// loop fyrir hvemörg hljóð í einum smelli.
+        for ( i=0; i<overlapMax; i++ )
+            {
+            var object = null;
 
-  request.onload = function() {
-    soundContext.decodeAudioData(request.response, function(newBuffer) {
-      sound.buffer = newBuffer;
-    });
-  }
-//commentaði út því að þetta kemur með error
-//  request.send();
-}
+            if ( ieVersion(8) )
+                {
+                object = document.createElement('div');
 
-function playSound(name, options){
-  var sound = sounds[name];
-  var soundVolume = sounds[name].volume || 1;
+                var iesound = '';
+                iesound = iesound + '<object id="'+soundID+'track'+i+'" type="audio/x-wav" data="'+audiofile+'" width="200" height="16">';
+                iesound = iesound + '<param name="src" value="'+audiofile+'" />';
+                iesound = iesound + '<param name="volume" value="2" />';
+                iesound = iesound + '<param name="autoplay" value="false" />';
+                iesound = iesound + '<param name="autostart" value="0" />';
+                iesound = iesound + '<param name="pluginurl" value="http://www.apple.com/quicktime/download/" />';
+                iesound = iesound + '</object>';
 
-  var buffer = sound.buffer;
-  if(buffer){
-    var source = soundContext.createBufferSource();
-    source.buffer = buffer;
+                object.id = soundID+'track'+i+'div';
+                object.innerHTML = iesound;
+                object.style.visibility = 'hidden';
+                object.style.position = 'absolute';
+                object.style.left = '0px';
+                object.style.top = '0px';
+                }
+            else
+                {
+                object = document.createElement('audio');
+                object.setAttribute('id',soundID+'track'+i);
+                object.setAttribute('src',audiofile);
+                }
 
-    var volume = soundContext.createGain();
+            document.body.appendChild( object );
 
-    if(options) {
-      if(options.volume) {
-        volume.gain.value = soundVolume * options.volume;
-      }
-    } else {
-      volume.gain.value = soundVolume;
+            var newsound = document.getElementById(soundID+'track'+i);
+
+
+
+            // volume á öll hljóð
+            newsound.volume = 1;
+
+            tracks.push( newsound );
+            }
+        }
+
+
+    this.play = function()
+        {
+        if ( tracks.length==0 )
+            return;
+
+        if ( ieVersion(8) )
+            {
+            tracks[track].Play();
+            track++;
+            track%=tracks.length;
+            return;
+            }
+
+        tracks[track].play();
+        track++;
+        track%=tracks.length;
+        }
+
+    this.load( audiofile );
+
+    return this;
     }
 
-    volume.connect(soundContext.destination);
-    source.connect(volume);
-    source.start(0);
-  }
-}
+function ieVersion( iecheck )
+    {
+
+    if ( !(/MSIE (\d+\.\d+);/.test(navigator.userAgent)) )
+        return 0;
+
+    var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
+
+    return (ieversion <= iecheck);
+    }
+
+// tenging við soundfiles og play
+var takeoff = new JellySound( "./Sound/power_up.wav" );
+var shoot = new JellySound("./Sound/shoot.wav");
+var shoot_from_spaceship = new JellySound("./Sound/shootfromspaceship.wav");
+//var explotion = new JellySound("./Sound/explosion.wav");
+//var explotion2 = new JellySound("./Sound/explotion2.wav");
+//var fastinvader = new JellySound("./Sound/fastinvader.wav");
+//var fastinvader2 = new JellySound("./Sound/fastinvader2.wav");
+//var fastinvader3 = new JellySound("./Sound/fastinvader3.wav");
+//var fastinvader4 = new JellySound("./Sound/fastinvader4.wav");
+//var mothership = new JellySound("./Sound/mothership.wav");

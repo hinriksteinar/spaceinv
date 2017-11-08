@@ -12,7 +12,7 @@ var g_images = {
   enemy_2_lazer : preloadIMG("enemy_2_lazer.png"),
   enemy_3       : preloadIMG("enemy_3.png"),
   enemy_3_lazer : preloadIMG("enemy_3_lazer.png"),
-  background    : preloadIMG("background.jpg"),
+  background    : preloadIMG("invaders.png"),
   tank_missile  : preloadIMG("tank_missile.png"),
   tank          : preloadIMG("tank.png")
 

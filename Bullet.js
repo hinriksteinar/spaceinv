@@ -20,9 +20,7 @@ function Bullet(descr) {
         this[property] = descr[property];
     }
 
-    this.halfWidth = this.width/2;
-    this.halfHeight = this.height/2;
-    this.cx -= this.halfWidth;
+
     this.halfWidth = this.width/2;
     this.halfHeight = this.height/2;
     this.x2 = this.cx + this.width;
@@ -55,12 +53,7 @@ Bullet.prototype.update = function (du) {
       bullets.splice(bullets.indexOf(this),1);
       g_shotsFired = false;
     }
-
-
-
     this.cy -= this.velY;
-
-
 
 };
 
@@ -69,8 +62,9 @@ Bullet.prototype.collidesWith = function () {
 
     for(var i = 0; i < badguys.length; i++){
       var a = badguys[i];
-      if(this.cy <= a.cy+a.halfHeight ) {
+      if(this.cx >= badguys.cx && this.cy >= badguys.cy ) {
 
+bullets.splice(bullets.indexOf(this),1);
       }
     }
 };

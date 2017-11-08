@@ -10,12 +10,11 @@
     <h1> Space Invaders </h1> <br>
 
 	<canvas id="myCanvas" width="800" height="500"
-		style="background: url('images/background.jpg')">
+		style="background: url('images/invaders.png')">
 	Sorry, but your browser does not support the HTML5 canvas tag.
 	</canvas>
 
     <div id="output"></div>
-
 
     <script src="utils.js"></script>
     <script src="g_keys.js"></script>
@@ -29,21 +28,17 @@
     <script src="update.js"></script>
     <script src="render.js"></script>
     <script src="PONG.js"></script>
-      <script src="sound.js"></script>
+    <script src="sound.js"></script>
+
+
 
 
 
 
     <!--audio id="background_audio" src="./Sound/xfiles.mp3" loop="loop" autoplay="autoplay"-->
-    <audio id=shoot>
-        <source src=Sound/shoot.wav>
-    </audio>
-    <audio id=move>
-        <source src=Sound/power_up.wav loop=false >
-    </audio>
 
-    <audio id="background_audio" src="./Sound/X-Files-Illuminati-Song.mp3" loop="loop" autoplay="autoplay">
-  </audio>
+    <audio id="background_audio" src="./Sound/X-Files-Illuminati-Song.mp3" loop="loop" autoplay="false">
+  </audio> 
 
       <button class="button" onclick="enableMute()" type="button">Mute Game-sound</button>
       <button class="button" onclick="enablePlay()" type="button">Play Game-sound</button>

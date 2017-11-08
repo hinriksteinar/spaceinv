@@ -4,7 +4,7 @@
 
 // COMMON TANK STUFF
 
-
+"use strict";
 
 // A generic contructor which accepts an arbitrary descriptor object
 function Tank(descr) {
@@ -26,14 +26,14 @@ var bullets = [];
 
 Tank.prototype.update = function () {
 
-    if(g_keys[this.KEY_FIRE]){
-      document.getElementById('shoot').play();
-
+    if(g_keys[this.KEY_FIRE] && !g_shotsFired){
+      g_shotsFired = true;
+      shoot_from_spaceship.play();
       bullets.push(new Bullet({
         cx : this.cx,
         cy : this.cy,
-        velY : 1,
-        sprite : new Sprite(g_images.tank_missile, 5,5)
+        velY : 4,
+        sprite : new Sprite(g_images.tank_missile, 5,20)
       }));
     }
 
@@ -41,7 +41,7 @@ Tank.prototype.update = function () {
         if(g_keys[this.GO_FAST]){
 
         this.cx += 7.5;
-        document.getElementById('move').play();
+        takeoff.play();
 
     }
     else {
@@ -53,7 +53,7 @@ Tank.prototype.update = function () {
     else if(g_keys[this.GO_LEFT] && this.cx - this.halfWidth > 0){
                 if(g_keys[this.GO_FAST]){
         this.cx -= 7.5;
-        document.getElementById('move').play();
+      takeoff.play();
 
     }
         else {
@@ -62,6 +62,9 @@ Tank.prototype.update = function () {
     }
 
 };
+
+
+
 
 Tank.prototype.render = function (ctx) {
     // (cx, cy) is the centre; must offset it for drawing

@@ -31,7 +31,7 @@ var tank = new Tank({
 
 var badguys = [];
 //hér skilgreinum við width  til að geta notað annarstaðar this.width
-//eins með cx cy isalive, 
+//eins með cx cy isalive,
 function produceBadboys(){
   console.log("hello");
   for(var i = 0; i < 16; i++){
@@ -52,6 +52,7 @@ function turnAround(){
   for(var i = 0; i < badguys.length; i++){
     badguys[i].xVel *= -1;
     badguys[i].cy += badguys[i].yVel;
+    
   }
 }
 

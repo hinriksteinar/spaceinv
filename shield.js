@@ -138,15 +138,15 @@ g_wall3.render = function(ctx) {
 };
 // hægt  að nota fyrir skot seinna með
 
-       g_wall.collidesWithBall = function(brickX, brickY) {
-        if ((brickX >= this.xBase/this.brickWidth) && (brickX < this.xBase+this.bricks[brickX].length*this.brickWidth/this.brickWidth))
-        {
-            if ((brickY >= this.yBase/this.brickHeight) && (brickY < this.yBase +this.bricks.length*this.brickHeight/this.brickHeight)){
-                if(this.bricks[brickY][brickX] >= 1){
-                  this.bricks[brickY][brickX]--;
-                  return true;
-            }
-            }
-        }
-        return false;
-    };
+ //      g_wall.collidesWithBall = function(brickX, brickY) {
+//        if ((brickX >= this.xBase/this.brickWidth) && (brickX < this.xBase+this.bricks[brickX].length*this.brickWidth/this.brickWidth))
+//        {
+//            if ((brickY >= this.yBase/this.brickHeight) && (brickY < this.yBase +this.bricks.length*this.brickHeight/this.brickHeight)){
+//                if(this.bricks[brickY][brickX] >= 1){
+//                  this.bricks[brickY][brickX]--;
+//                  return true;
+//            }
+//            }
+//        }
+//        return false;
+  //  };
