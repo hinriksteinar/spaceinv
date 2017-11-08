@@ -22,15 +22,20 @@ Enemy.prototype.render = function(ctx){
 }
 
 
-Enemy.prototype.update = function () {
+
+
+Enemy.prototype.update = function (du) {
   //console.log(this.cx - 25);
+
   var nextX = this.cx + this.xVel;
   if(nextX < 0 || nextX + 25 > g_canvas.width){
     turnAround();
     return;
   }
   else {
+
     this.cx += this.xVel;
+
   }
 
 

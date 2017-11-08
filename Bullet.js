@@ -59,20 +59,52 @@ Bullet.prototype.update = function (du) {
 
 Bullet.prototype.collidesWith = function () {
 
-    for(var i = 0; i < badguys.length; i++){
-      var a = badguys[i];
-      if(this.cx >= badguys.cx && this.cy >= badguys.cy ) {
 
-bullets.splice(bullets.indexOf(this),1);
+
+     var nextY = this.cy - this.velY;
+     for(var i = 0; i < badguys.length; i++){
+       var a = badguys[i];
+       if(nextY - this.height/2 < a.cy+a.height && this.cx >= a.cx-a.width
+                                  && this.cx <= a.cx + a.width){
+
+         console.log("a.cx: " + a.cx);
+         console.log("a.cy: " + a.cy);
+         console.log("a.width: " + a.width);
+         console.log("a.height: " + a.height);
+         badguys.splice(badguys.indexOf(a),1);
+         bullets.splice(bullets.indexOf(this),1);
+         g_shotsFired = false;
+         console.log("collision");
+         return;
+     }
+   }
+
+  /*  for(var i = 0; i < badguys.length; i++){
+      var a = badguys[i];
+      var aCheck = a.cx < this.x2;
+      var bCheck = a.x2 > this.cx;
+      var cCheck = a.cy < this.y2;
+      var dCheck = a.y2 > this.cy;
+      //console.log(aCheck);
+      //console.log(bCheck);
+      //console.log(cCheck);
+      //console.log(dCheck);
+      if( aCheck && bCheck && cCheck && dCheck ) {
+
+        badguys.splice(badguys.indexOf(a),1);
+        bullets.splice(bullets.indexOf(this),1);
+        g_shotsFired = false;
+        return;
+
       }
-    }
+    }*/
 };
 
 
 
 Bullet.prototype.render = function (ctx) {
 
-    this.sprite.drawAt(ctx, this.cx, this.cy);
+    this.sprite.drawAt(ctx, this.cx-this.width/2, this.cy-this.height/2);
 
 
 
