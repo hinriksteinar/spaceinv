@@ -77,8 +77,8 @@ Bullet.prototype.collidesWith = function () {
          explotion.play();
          console.log("collision");
          return;
+       }
      }
-   }
 
   /*  for(var i = 0; i < badguys.length; i++){
       var a = badguys[i];
