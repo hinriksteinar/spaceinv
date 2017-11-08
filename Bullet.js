@@ -76,8 +76,28 @@ Bullet.prototype.collidesWith = function () {
          g_shotsFired = false;
          console.log("collision");
          return;
+       }
      }
-   }
+
+     for(var i = 0; i < g_wall.length; i++){
+       var a = g_wall[i];
+       if(nextY - this.height/2 < a.cy+a.height && this.cx >= a.cx-a.width
+                                  && this.cx <= a.cx + a.width){
+
+         console.log("a.cx: " + a.cx);
+         console.log("a.cy: " + a.cy);
+         console.log("a.width: " + a.width);
+         console.log("a.height: " + a.height);
+         g_wall.splice(g_wall.indexOf(a),1);
+         bullets.splice(bullets.indexOf(this),1);
+         g_shotsFired = false;
+         console.log("collision");
+         return;
+       }
+     }
+
+
+
 
   /*  for(var i = 0; i < badguys.length; i++){
       var a = badguys[i];
