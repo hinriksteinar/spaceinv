@@ -97,6 +97,7 @@ function turnAround(){
     badguys[i].cy += badguys[i].yVel;
 
   }
+  invaderdown.play();
 }
 
 

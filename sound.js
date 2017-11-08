@@ -100,10 +100,10 @@ function ieVersion( iecheck )
 var takeoff = new JellySound( "./Sound/power_up.wav" );
 var shoot = new JellySound("./Sound/shoot.wav");
 var shoot_from_spaceship = new JellySound("./Sound/shootfromspaceship.wav");
-//var explotion = new JellySound("./Sound/explosion.wav");
+var explotion = new JellySound("./Sound/explosion.wav");
 //var explotion2 = new JellySound("./Sound/explotion2.wav");
-//var fastinvader = new JellySound("./Sound/fastinvader.wav");
-//var fastinvader2 = new JellySound("./Sound/fastinvader2.wav");
-//var fastinvader3 = new JellySound("./Sound/fastinvader3.wav");
-//var fastinvader4 = new JellySound("./Sound/fastinvader4.wav");
+var invaderdown = new JellySound("./Sound/invadersdown.mp3");
+//var fastinvader1 = new JellySound("./Sound/fastinvader2.wav");
+//var fastinvader2 = new JellySound("./Sound/fastinvader3.wav");
+var fastinvader3 = new JellySound("./Sound/fastinvader4.wav");
 //var mothership = new JellySound("./Sound/mothership.wav");
