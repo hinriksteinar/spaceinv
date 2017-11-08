@@ -16,8 +16,8 @@ function Enemy(descr) {
 
 Enemy.prototype.render = function(ctx){
   // STUFF
-  this.sprite.drawAt(ctx, this.cx - this.width/2,
-                          this.cy - this.height/2);
+  this.sprite.drawAt(ctx, this.cx,
+                          this.cy);
 
 }
 
