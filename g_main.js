@@ -38,7 +38,7 @@ g_main._updateClocks = function (frameTime) {
 
     // First-time initialisation
     if (this._frameTime_ms === null) this._frameTime_ms = frameTime;
-
+    
     // Track frameTime and its delta
     this._frameTimeDelta_ms = frameTime - this._frameTime_ms;
     this._frameTime_ms = frameTime;

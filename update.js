@@ -30,16 +30,20 @@ function update(dt) {
 
     // Warn about very large dt values -- they may lead to error
     //
+    //console.log(dt);
+    //console.log(NOMINAL_UPDATE_INTERVAL);
     if (dt > 200) {
         console.log("Big dt =", dt, ": CLAMPING TO NOMINAL");
+
         dt = NOMINAL_UPDATE_INTERVAL;
     }
 
     // If using variable time, divide the actual delta by the "nominal" rate,
     // giving us a conveniently scaled "du" to work with.
     //
-    var du = (dt / NOMINAL_UPDATE_INTERVAL);
 
+    var du = (dt / NOMINAL_UPDATE_INTERVAL);
+    //console.log(du);
     updateSimulation(du);
 
     g_prevUpdateDt = original_dt;
@@ -56,7 +60,7 @@ var KEY_STEP  = 'O'.charCodeAt(0);
 var g_isUpdatePaused = false;
 
 function shouldSkipUpdate() {
-  
+
     if (eatKey(KEY_PAUSE)) {
         g_isUpdatePaused = !g_isUpdatePaused;
     }

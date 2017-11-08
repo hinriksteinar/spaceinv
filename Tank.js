@@ -25,7 +25,7 @@ Tank.prototype.KEY_FIRE = ' '.charCodeAt(0);
 
 Tank.prototype.update = function () {
 
-    
+
 
 
 
@@ -35,9 +35,11 @@ Tank.prototype.update = function () {
 
 
       bullets.push(new Bullet({
-        cx : this.cx,
-        cy : this.cy,
-        velY : 4,
+        cx     : this.cx,
+        cy     : this.cy,
+        width  : 5,
+        height : 20,
+        velY   : 4,
         sprite : new Sprite(g_images.tank_missile, 5,20)
       }));
     }

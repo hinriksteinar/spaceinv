@@ -21,6 +21,8 @@ var tank = new Tank({
     cx : 400,
     cy : 470,
     sprite : new Sprite(g_images.tank, 50, 50),
+    width  : 50,
+    height : 50,
 
     GO_UP   : KEY_W,
     GO_DOWN : KEY_S,
@@ -29,18 +31,18 @@ var tank = new Tank({
     GO_FAST : KEY_SOME
 });
 
-var badguys = [];
+
 //hér skilgreinum við width  til að geta notað annarstaðar this.width
 //eins með cx cy isalive,
 function produceBadboys(){
-  console.log("hello");
+
   for(var i = 0; i < 16; i++){
     for(var j = 0; j < 7; j++){
       badguys.push(new Enemy({
         cx      : i*30,
         cy      : j*30,
-        width   : 0,
-        height  : 0,
+        width   : 25,
+        height  : 25,
         isAlive : true,
         sprite  : new Sprite(g_images.enemy_1, 25, 25)
       }));
@@ -52,7 +54,7 @@ function turnAround(){
   for(var i = 0; i < badguys.length; i++){
     badguys[i].xVel *= -1;
     badguys[i].cy += badguys[i].yVel;
-    
+
   }
 }
 
@@ -76,7 +78,7 @@ function updateSimulation(du) {
 
     tank.update(du);
     for(var i = 0; i < badguys.length; i++){
-      badguys[i].update();
+      badguys[i].update(du);
     }
 
     for(var i = 0; i < bullets.length; i++){
