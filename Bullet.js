@@ -67,12 +67,12 @@ Bullet.prototype.collidesWith = function () {
        if(nextY - this.height/2 < a.cy+a.height/2 && this.cx >= a.cx-a.width/2
                                   && this.cx <= a.cx + a.width/2){
 
-        explode(a.cx, a.cy);
+         explode(a.cx, a.cy);                                
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
          g_shotsFired = false;
          explotion.play();
-         console.log("collision");
+         //console.log("collision");
          return;
        }
      }

@@ -122,6 +122,9 @@ function updateSimulation(du) {
     for(var i = 0; i < explosions.length; i++){
       explosions[i].update();
     }
+    
+    if(badguys.length == 0) produceBadboys();
+
     for(var i = 0; i < badguys.length; i++){
       badguys[i].update(du);
       console.log(du);
