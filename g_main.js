@@ -116,3 +116,19 @@ g_main.init = function () {
 
     this._requestNextIteration();
 };
+/*
+function mainIter() {
+    if (!requestedQuit()) {
+        updateScore();
+    } else {
+        window.clearInterval(intervalID);
+    }
+}
+// Simple voluntary quit mechanism
+//
+var KEY_QUIT = 'Q'.charCodeAt(0);
+function requestedQuit() {
+    return g_keys[KEY_QUIT];
+}
+var intervalID = window.setInterval(mainIter, 16.666);
+*/

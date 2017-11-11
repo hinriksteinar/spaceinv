@@ -6,6 +6,11 @@ var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
+/*function updateScore(){
+    g_ctx.font = '40px Ariel';
+    g_ctx.fillText("Score: " tank + 5, 40);
+}
+*/
 
 
 // TANK 1
@@ -23,6 +28,7 @@ var tank = new Tank({
     sprite : new Sprite(g_images.tank, 50, 50),
     width  : 50,
     height : 50,
+    //score : 0,
 
     GO_UP   : KEY_W,
     GO_DOWN : KEY_S,
