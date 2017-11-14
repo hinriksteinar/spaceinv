@@ -99,6 +99,7 @@ function ieVersion( iecheck )
 // tenging við soundfiles og play
 var takeoff = new JellySound( "./Sound/power_up.wav" );
 var shoot = new JellySound("./Sound/bombinv.wav");
+var shoot_land = new JellySound("./Sound/bomblands.wav");
 var shoot_from_spaceship = new JellySound("./Sound/shootfromspaceship.wav");
 var explotion = new JellySound("./Sound/explosion.wav");
 //var explotion2 = new JellySound("./Sound/explotion2.wav");
