@@ -25,8 +25,8 @@ Enemy.prototype.fireBullet = function (){
   enemyBullets.push(new Bullet2({
     cx     : this.cx,
     cy     : this.cy,
-    width  : 5,
-    height : 20,
+    width  : 20,
+    height : 30,
     velY   : -4,
     sprite : this.lazer
   }));
@@ -39,9 +39,13 @@ Enemy.prototype.update = function (du) {
   //console.log(this.cx - 25);
 
   if (this.cy + 100 > g_canvas.height){
-    g_main._isGameOver = true;
-    location.reload();
-    console.log("game over");
+    if(g_lives == 0) {g_main._isGameOver = true;
+      location.reload();
+      console.log("game over");
+    }
+    else{
+      g_lives--;
+    }
   }
 
   var nextX = this.cx + this.xVel;

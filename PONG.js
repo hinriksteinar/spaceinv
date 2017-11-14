@@ -193,6 +193,7 @@ function renderSimulation(ctx) {
 
     tank.render(ctx);
     scoreRender(ctx);
+    livesRender(ctx);
 }
 
 
@@ -204,6 +205,18 @@ function scoreRender(ctx){
   ctx.fillText("SCORE: " + g_score, 30,30, 100);
   ctx.fillStyle = oldStyle;
   ctx.font = oldFont;
+}
+
+function livesRender(ctx){
+
+  var oldStyle = ctx.fillStyle;
+  var oldFont = ctx.font;
+  ctx.font = "40px Sans Serif";
+  ctx.fillStyle = 'White';
+  ctx.fillText("LIVES: " + g_lives, g_canvas.width-200,30, 100);
+  ctx.fillStyle = oldStyle;
+  ctx.font = oldFont;
+
 
 }
 
@@ -235,5 +248,5 @@ var KEY_RESTART  = 'H'.charCodeAt(0);
     }
 
 
-produceBadboys();
+//produceBadboys();
 g_main.init();

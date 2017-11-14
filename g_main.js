@@ -61,9 +61,28 @@ g_main._iterCore = function (dt) {
 g_main._isGameOver = false;
 
 g_main.gameOver = function () {
-    this._isGameOver = true;
-    console.log("gameOver: quitting...");
+    //this._isGameOver = true;
+    g_isUpdatePaused = !g_isUpdatePaused;
+    g_doRender       = !g_doRender;
+    g_doClear        = !g_doClear;
+    clearCanvas(g_ctx);
+    g_main.drawGameOverScreen()
 };
+
+g_main.drawGameOverScreen = function () {
+  console.log("hi");
+  var oldFont = g_ctx.font;
+  var oldStyle = g_ctx.fillStyle;
+  g_ctx.font = "50px Sans Serif";
+  g_ctx.fillStyle = "white";
+  g_ctx.fillText("YOU ARE DEAD!",200,100);
+  g_ctx.fillText("YOUR SCORE : " + g_score, 200
+                                        ,200);
+  g_ctx.fillText("PRESS SPACE TO TRY AGAIN", 50,300);
+  g_ctx.font = oldFont;
+  g_ctx.fillStyle = oldStyle;
+
+}
 
 // Simple voluntary quit mechanism
 //
@@ -119,7 +138,7 @@ g_main.init = function () {
 
 function mainIter() {
     if (!requestedQuit()) {
-        //updateScore();
+
     } else {
         window.clearInterval(intervalID);
     }

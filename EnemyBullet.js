@@ -60,11 +60,17 @@ Bullet2.prototype.collidesWith = function () {
 
 
 
-    var nextY = this.cy + this.velY;
-    if(nextY + this.height/2 >= tank.cy - tank.height/2 && nextY - this.height/2 <= tank.cy + tank.height &&
-       this.cx >= tank.cx - tank.width/2 && this.cx <= tank.cx + tank.width/2){
-                      location.reload();
-  }
+    //var nextY = this.cy + this.velY;
+    if(this.cy >= tank.cy - tank.height/2
+      && this.cy  <= tank.cy + tank.height
+      && this.cx  >= tank.cx - tank.width/2
+      && this.cx <= tank.cx + tank.width/2){
+
+                      if(g_lives == 0) g_main.gameOver();
+                      enemyBullets = [];
+                      g_lives--;
+
+    }
 
     /* var nextY = this.cy - this.velY;
      for(var i = 0; i < badguys.length; i++){
@@ -105,7 +111,7 @@ Bullet2.prototype.collidesWith = function () {
 
 
 
-Bullet2.prototype.render = function s(ctx) {
+Bullet2.prototype.render = function (ctx) {
 
     this.sprite.drawAt(ctx, this.cx-this.width/2, this.cy-this.height/2);
 
