@@ -72,7 +72,7 @@ Bullet.prototype.collidesWith = function () {
 
 
 
-         
+
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
          g_shotsFired = false;

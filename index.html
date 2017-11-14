@@ -25,7 +25,6 @@
     <script src="enemies.js"></script>
     <script src="Bullet.js"></script>
     <script src="Tank.js"></script>
-    <script src="shield.js"></script>
     <script src="g_main.js"></script>
     <script src="update.js"></script>
     <script src="render.js"></script>
@@ -39,25 +38,40 @@
 
     <!--audio id="background_audio" src="./Sound/xfiles.mp3" loop="loop" autoplay="autoplay"-->
 
-    <audio id="background_audio" src="./Sound/xfiles.mp3" loop="loop" autoplay="false">
-  </audio>
+    <audio id="background_audio" src="./Sound/xfiles.mp3" loop="loop" autoplay="false"></audio>
 
-      <button class="button" onclick="enableMute()" type="button">Mute Game-sound</button>
-      <button class="button" onclick="enablePlay()" type="button">Play Game-sound</button>
+      <button class="button" onclick="enableMute()" type="button">Mute All Game-sound</button>
+      <button class="button" onclick="enablePlay()" type="button">Play All Game-sound</button>
+        <script>
+          var vid = document.getElementById("background_audio");
+          var s0 = document.getElementById("jellysound0track0");
+          var s1 = document.getElementById("jellysound1track0");
+          var s2 = document.getElementById("jellysound2track0");
+          var s3 = document.getElementById("jellysound3track0");
+          var s4 = document.getElementById("jellysound4track0");
+          var s5 = document.getElementById("jellysound5track0");
 
-<script>
-var vid = document.getElementById("background_audio");
+          function enableMute() {
+            vid.muted = true;
+            s0.muted = true;
+            s1.muted = true;
+            s2.muted = true;
+            s3.muted = true;
+            s4.muted = true;
+            s5.muted = true;
+          }
+          function enablePlay() {
+            vid.muted = false;
+            s1.muted = false;
+            s2.muted = false;
+            s3.muted = false;
+            s4.muted = false;
+            s5.muted = false;
+          }
+        </script>
 
-function enableMute() {
-    vid.muted = true;
-}
-function enablePlay() {
-  vid.muted = false;
-}
-</script>
 
 
-
-    <p><b>To Play the Space Invaders game, use A and D to move the ship about <br> P = Pause </p>
+    <h2><b>To Play the Space Invaders game, use A and D to move the ship <br> Space Bar = Shoot <br> K = Ship Power <br> P = Pause Game <br> R = Restart Game </h2>
   </body>
 </html>

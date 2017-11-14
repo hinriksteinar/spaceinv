@@ -4,7 +4,7 @@ var JellySound = function( audiofile )
     {
 
     //hve mörg hljóð koma í einum smelli
-    var overlapMax = 3;
+    var overlapMax = 1;
 
 
 
@@ -55,7 +55,7 @@ var JellySound = function( audiofile )
 
 
             // volume á öll hljóð
-            newsound.volume = 1;
+            newsound.volume = 0.5;
 
             tracks.push( newsound );
             }
@@ -99,6 +99,7 @@ function ieVersion( iecheck )
 // tenging við soundfiles og play
 var takeoff = new JellySound( "./Sound/power_up.wav" );
 var shoot = new JellySound("./Sound/bombinv.wav");
+var shoot_land = new JellySound("./Sound/bomblands.wav");
 var shoot_from_spaceship = new JellySound("./Sound/shootfromspaceship.wav");
 var explotion = new JellySound("./Sound/explosion.wav");
 //var explotion2 = new JellySound("./Sound/explotion2.wav");
