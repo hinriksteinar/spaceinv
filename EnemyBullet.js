@@ -66,8 +66,15 @@ if (this.cy > g_canvas.height) { shoot_land.play();}
        this.cy <= tank.cy + tank.height &&
        this.cx >= tank.cx - tank.width/2 &&
        this.cx <= tank.cx + tank.width/2){
-      location.reload();
-      play.shoot_land();
+      if(g_lives == 0){
+        g_main.gameOver();
+
+      }
+      else{
+          g_lives--;
+          enemyBullets = [];
+          //play.shoot_land();
+      }
   }
 
 
