@@ -4,7 +4,7 @@ var JellySound = function( audiofile )
     {
 
     //hve mörg hljóð koma í einum smelli
-    var overlapMax = 3;
+    var overlapMax = 1;
 
 
 
