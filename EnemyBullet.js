@@ -77,42 +77,6 @@ if (this.cy > g_canvas.height) { shoot_land.play();}
       }
   }
 
-
-    /* var nextY = this.cy - this.velY;
-     for(var i = 0; i < badguys.length; i++){
-       var a = badguys[i];
-       if(nextY - this.height/2 < a.cy+a.height/2 && this.cx >= a.cx-a.width/2
-                                  && this.cx <= a.cx + a.width/2){
-
-         explode(a.cx, a.cy);
-         badguys.splice(badguys.indexOf(a),1);
-         bullets.splice(bullets.indexOf(this),1);
-         g_shotsFired = false;
-         explotion.play();
-         //console.log("collision");
-         return;
-       }
-     }*/
-
-  /*  for(var i = 0; i < badguys.length; i++){
-      var a = badguys[i];
-      var aCheck = a.cx < this.x2;
-      var bCheck = a.x2 > this.cx;
-      var cCheck = a.cy < this.y2;
-      var dCheck = a.y2 > this.cy;
-      //console.log(aCheck);
-      //console.log(bCheck);
-      //console.log(cCheck);
-      //console.log(dCheck);
-      if( aCheck && bCheck && cCheck && dCheck ) {
-
-        badguys.splice(badguys.indexOf(a),1);
-        bullets.splice(bullets.indexOf(this),1);
-        g_shotsFired = false;
-        return;
-
-      }
-    }*/
 };
 
 

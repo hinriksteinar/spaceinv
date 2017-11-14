@@ -28,7 +28,6 @@ tank = new Tank({
     sprite : new Sprite(g_images.tank, 50, 50),
     width  : 50,
     height : 50,
-    //score : 0,
 
     GO_UP   : KEY_W,
     GO_DOWN : KEY_S,
@@ -44,35 +43,37 @@ tank = new Tank({
 //eins með cx cy isalive,
 function produceBadboys(){
 
+    if(g_score !== 0) g_enemyXvel *= 1.12;
     for(var j = 0; j < 6; j++){
       for(var i = 0; i < 12; i++){
         if(j%2 == 0){
-          pushEnemy2(i,j);
+          pushEnemy2(i,j,g_enemyXvel);
         }
         else if(j%3 == 0){
-          pushEnemy3(i,j);
+          pushEnemy3(i,j, g_enemyXvel);
         }
         else{
-          pushEnemy1(i,j);
+          pushEnemy1(i,j,g_enemyXvel);
         }
     }
   }
 }
 
-function pushEnemy1(i,j){
+function pushEnemy1(i,j,xvel){
   badguys.push(new Enemy({
     cx      : (i+1)*40,
     cy      : (j+1)*40,
     width   : 25,
     height  : 25,
     isAlive : true,
+    xVel    : xvel,
     sprite  : new Sprite(g_images.enemy_1, 25, 25),
     lazer   : new Sprite(g_images.enemy_1_lazer, 20, 30),
     score   : 300
   }));
 }
 
-function pushEnemy2(i,j){
+function pushEnemy2(i,j,xvel){
 
   badguys.push(new Enemy({
     cx      : (i+1)*40,
@@ -80,19 +81,21 @@ function pushEnemy2(i,j){
     width   : 25,
     height  : 25,
     isAlive : true,
+    xVel    : xvel,
     sprite  : new Sprite(g_images.enemy_2, 25, 25),
     lazer   : new Sprite(g_images.enemy_2_lazer, 20, 30),
     score   : 200
   }));
 }
 
-function pushEnemy3(i,j){
+function pushEnemy3(i,j,xvel){
   badguys.push(new Enemy({
     cx      : (i+1)*40,
     cy      : (j+1)*40,
     width   : 25,
     height  : 25,
     isAlive : true,
+    xVel    : xvel,
     sprite  : new Sprite(g_images.enemy_3, 25, 25),
     lazer   : new Sprite(g_images.enemy_3_lazer, 20, 30),
     score   : 100
@@ -100,7 +103,7 @@ function pushEnemy3(i,j){
 
 }
 
-var myVar = setInterval(myTimer, 1500);
+var myVar = setInterval(myTimer, 5000);
 
 function myTimer(){
 

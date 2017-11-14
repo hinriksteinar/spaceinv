@@ -138,7 +138,7 @@ g_main.init = function () {
 
 function mainIter() {
     if (!requestedQuit()) {
-
+      //g_main.gameOver();
     } else {
         window.clearInterval(intervalID);
     }

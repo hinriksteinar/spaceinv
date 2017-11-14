@@ -39,7 +39,7 @@ Tank.prototype.update = function () {
         cy     : this.cy,
         width  : 5,
         height : 20,
-        velY   : 5.5,
+        velY   : 10,
         sprite : new Sprite(g_images.tank_missile, 5,20)
       }));
     }

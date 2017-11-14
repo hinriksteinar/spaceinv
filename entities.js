@@ -30,6 +30,8 @@ function preloadIMG(x) {
 
 }
 
+var g_enemyXvel = 1;
+
 var g_score = 0;
 
 var g_lives = 3;
