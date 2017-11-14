@@ -68,6 +68,11 @@ Bullet.prototype.collidesWith = function () {
          && this.cx >= a.cx && this.cx <= a.cx + a.width){
 
          explode(a.cx, a.cy);
+         g_score += badguys[i].score;
+
+
+
+         
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
          g_shotsFired = false;

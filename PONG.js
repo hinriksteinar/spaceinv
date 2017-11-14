@@ -67,7 +67,8 @@ function pushEnemy1(i,j){
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_1, 25, 25),
-    lazer   : new Sprite(g_images.enemy_1_lazer, 20, 30)
+    lazer   : new Sprite(g_images.enemy_1_lazer, 20, 30),
+    score   : 300
   }));
 }
 
@@ -80,7 +81,8 @@ function pushEnemy2(i,j){
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_2, 25, 25),
-    lazer   : new Sprite(g_images.enemy_2_lazer, 20, 30)
+    lazer   : new Sprite(g_images.enemy_2_lazer, 20, 30),
+    score   : 200
   }));
 }
 
@@ -92,7 +94,8 @@ function pushEnemy3(i,j){
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_3, 25, 25),
-    lazer   : new Sprite(g_images.enemy_3_lazer, 20, 30)
+    lazer   : new Sprite(g_images.enemy_3_lazer, 20, 30),
+    score   : 100
   }));
 
 }
@@ -177,10 +180,6 @@ function renderSimulation(ctx) {
     }
 
     for(var i = 0; i < bullets.length; i++){
-      //hugsanlega þarf að setja if setingu hér til að láta koma eina kúlu þegar ýtt er á key_fire
-      // if setting seð að ýtir einu [i] af stað
-
-
       bullets[i].render(ctx);
     }
 
@@ -193,11 +192,24 @@ function renderSimulation(ctx) {
     g_wall3.render(ctx);
 
     tank.render(ctx);
-    //ctx.drawImage(img, 0, 0, 100,100);
+    scoreRender(ctx);
+}
 
 
+function scoreRender(ctx){
+  var oldStyle = ctx.fillStyle;
+  var oldFont = ctx.font;
+  ctx.font = "40px Sans Serif";
+  ctx.fillStyle = 'White';
+  ctx.fillText("SCORE: " + g_score, 30,30, 100);
+  ctx.fillStyle = oldStyle;
+  ctx.font = oldFont;
 
 }
+
+
+
+
 
 var KEY_RESTART  = 'H'.charCodeAt(0);
 

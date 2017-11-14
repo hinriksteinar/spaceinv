@@ -30,6 +30,7 @@ function preloadIMG(x) {
 
 }
 
+var g_score = 0;
 
 var tank;
 
