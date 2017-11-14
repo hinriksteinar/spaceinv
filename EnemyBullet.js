@@ -48,9 +48,8 @@ Bullet2.prototype.update = function (du) {
 
     this.collidesWith();
 
-    if(this.cy < 0){
-      bullets.splice(bullets.indexOf(this),1);
-      g_shotsFired = false;
+    if(this.cy > g_canvas.height){
+      enemyBullets.splice(enemyBullets.indexOf(this),1);
     }
     this.cy -= this.velY;
 
@@ -62,7 +61,6 @@ Bullet2.prototype.collidesWith = function () {
 
 
     var nextY = this.cy + this.velY;
-    console.log("tank.height = " + tank.height + "tank.width =" + tank.width);
     if(nextY + this.height/2 >= tank.cy - tank.height/2 && nextY - this.height/2 <= tank.cy + tank.height &&
        this.cx >= tank.cx - tank.width/2 && this.cx <= tank.cx + tank.width/2){
                       location.reload();

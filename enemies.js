@@ -9,7 +9,7 @@ function Enemy(descr) {
     }
     this.x2 = this.cx + this.width;
     this.y2 = this.cy + this.height;
-    this.xVel = 2.5;
+    this.xVel = 1;
     this.yVel = 40;
 
 }

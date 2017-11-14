@@ -64,8 +64,8 @@ Bullet.prototype.collidesWith = function () {
      var nextY = this.cy - this.velY;
      for(var i = 0; i < badguys.length; i++){
        var a = badguys[i];
-       if(nextY - this.height/2 <= a.cy+a.height/2 && nextY + this.height/2 <= a.cy - a.height/2
-         && this.cx >= a.cx-a.width/2 && this.cx <= a.cx + a.width/2){
+       if(nextY - this.height/2 <= a.cy+a.height/2 && nextY + this.height/2 >= a.cy - a.height/2
+         && this.cx >= a.cx && this.cx <= a.cx + a.width){
 
          explode(a.cx, a.cy);
          badguys.splice(badguys.indexOf(a),1);

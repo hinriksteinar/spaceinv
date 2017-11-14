@@ -44,8 +44,8 @@ tank = new Tank({
 //eins með cx cy isalive,
 function produceBadboys(){
 
-    for(var j = 0; j < 7; j++){
-      for(var i = 0; i < 16; i++){
+    for(var j = 0; j < 6; j++){
+      for(var i = 0; i < 12; i++){
         if(j%2 == 0){
           pushEnemy2(i,j);
         }
@@ -61,47 +61,46 @@ function produceBadboys(){
 
 function pushEnemy1(i,j){
   badguys.push(new Enemy({
-    cx      : i*30,
-    cy      : j*30,
+    cx      : (i+1)*40,
+    cy      : (j+1)*40,
     width   : 25,
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_1, 25, 25),
-    lazer   : new Sprite(g_images.enemy_1_lazer, 10, 20)
+    lazer   : new Sprite(g_images.enemy_1_lazer, 20, 30)
   }));
 }
 
 function pushEnemy2(i,j){
 
   badguys.push(new Enemy({
-    cx      : i*30,
-    cy      : j*30,
+    cx      : (i+1)*40,
+    cy      : (j+1)*40,
     width   : 25,
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_2, 25, 25),
-    lazer   : new Sprite(g_images.enemy_2_lazer, 10, 20)
+    lazer   : new Sprite(g_images.enemy_2_lazer, 20, 30)
   }));
 }
 
 function pushEnemy3(i,j){
   badguys.push(new Enemy({
-    cx      : i*30,
-    cy      : j*30,
+    cx      : (i+1)*40,
+    cy      : (j+1)*40,
     width   : 25,
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_3, 25, 25),
-    lazer   : new Sprite(g_images.enemy_3_lazer, 10, 20)
+    lazer   : new Sprite(g_images.enemy_3_lazer, 20, 30)
   }));
 
 }
 
-var myVar = setInterval(myTimer, 1000);
+var myVar = setInterval(myTimer, 1500);
 
 function myTimer(){
 
-  console.log("heeey");
   enemyFire();
   shoot.play();
 }
