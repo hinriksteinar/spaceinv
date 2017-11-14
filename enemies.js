@@ -9,7 +9,7 @@ function Enemy(descr) {
     }
     this.x2 = this.cx + this.width;
     this.y2 = this.cy + this.height;
-    this.xVel = 5.5;
+    this.xVel = 2.5;
     this.yVel = 40;
 
 }
@@ -19,6 +19,17 @@ Enemy.prototype.render = function(ctx){
   this.sprite.drawAt(ctx, this.cx,
                           this.cy);
 
+}
+
+Enemy.prototype.fireBullet = function (){
+  enemyBullets.push(new Bullet2({
+    cx     : this.cx,
+    cy     : this.cy,
+    width  : 5,
+    height : 20,
+    velY   : -4,
+    sprite : this.lazer
+  }));
 }
 
 

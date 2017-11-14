@@ -65,7 +65,7 @@ function pushEnemy1(i,j){
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_1, 25, 25),
-    lazer   : new Sprite(g_images.enemy_1_lazer, 5, 20)
+    lazer   : new Sprite(g_images.enemy_1_lazer, 10, 20)
   }));
 }
 
@@ -78,7 +78,7 @@ function pushEnemy2(i,j){
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_2, 25, 25),
-    lazer   : new Sprite(g_images.enemy_2_lazer, 5, 20)
+    lazer   : new Sprite(g_images.enemy_2_lazer, 10, 20)
   }));
 }
 
@@ -90,7 +90,7 @@ function pushEnemy3(i,j){
     height  : 25,
     isAlive : true,
     sprite  : new Sprite(g_images.enemy_3, 25, 25),
-    lazer   : new Sprite(g_images.enemy_3_lazer, 5, 20)
+    lazer   : new Sprite(g_images.enemy_3_lazer, 10, 20)
   }));
 
 }
@@ -100,6 +100,12 @@ var myVar = setInterval(myTimer, 1000);
 function myTimer(){
 
   console.log("heeey");
+  enemyFire();
+}
+
+function enemyFire(){
+  var rando = Math.floor(Math.random()*badguys.length);
+  badguys[rando].fireBullet();
 }
 
 
@@ -143,6 +149,10 @@ function updateSimulation(du) {
       badguys[i].update(du);
     }
 
+    for(var i = 0; i < enemyBullets.length; i++){
+      enemyBullets[i].update();
+    }
+
     for(var i = 0; i < bullets.length; i++){
       bullets[i].update();
     }
@@ -171,6 +181,11 @@ function renderSimulation(ctx) {
 
       bullets[i].render(ctx);
     }
+
+    for(var i = 0; i < enemyBullets.length; i++){
+      enemyBullets[i].render(ctx);
+    }
+
     g_wall.render(ctx);
     g_wall2.render(ctx);
     g_wall3.render(ctx);

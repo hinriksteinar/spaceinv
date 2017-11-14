@@ -1,6 +1,4 @@
 
-
-
 function Sprite(image, width, height){
   this.image = image;
   //this.scale = 1;

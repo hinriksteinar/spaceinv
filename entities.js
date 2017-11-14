@@ -38,6 +38,8 @@ var badguys = [];
 
 var explosions = [];
 
+var enemyBullets = [];
+
 var lazers  = [];
 
 var bullets = [];

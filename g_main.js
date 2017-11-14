@@ -116,7 +116,7 @@ g_main.init = function () {
 
     this._requestNextIteration();
 };
-/*
+
 function mainIter() {
     if (!requestedQuit()) {
         updateScore();
@@ -131,4 +131,3 @@ function requestedQuit() {
     return g_keys[KEY_QUIT];
 }
 var intervalID = window.setInterval(mainIter, 16.666);
-*/
