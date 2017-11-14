@@ -9,7 +9,7 @@ function Enemy(descr) {
     }
     this.x2 = this.cx + this.width;
     this.y2 = this.cy + this.height;
-    this.xVel = 0.5;
+    this.xVel = 5.5;
     this.yVel = 40;
 
 }
@@ -26,6 +26,12 @@ Enemy.prototype.render = function(ctx){
 
 Enemy.prototype.update = function (du) {
   //console.log(this.cx - 25);
+
+  if (this.cy + 100 > g_canvas.height){
+    g_main._isGameOver = true;
+    location.reload();
+    console.log("game over");
+  }
 
   var nextX = this.cx + this.xVel;
   if(nextX < 0 || nextX + 25 > g_canvas.width){

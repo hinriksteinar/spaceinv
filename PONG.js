@@ -95,6 +95,13 @@ function pushEnemy3(i,j){
 
 }
 
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer(){
+
+  console.log("heeey");
+}
+
 
 // lætur enemies fara til baka
 function turnAround(){
@@ -105,6 +112,7 @@ function turnAround(){
   }
   invaderdown.play();
 }
+
 
 
 // =============
@@ -128,12 +136,11 @@ function updateSimulation(du) {
     for(var i = 0; i < explosions.length; i++){
       explosions[i].update();
     }
-    
+
     if(badguys.length == 0) produceBadboys();
 
     for(var i = 0; i < badguys.length; i++){
       badguys[i].update(du);
-      console.log(du);
     }
 
     for(var i = 0; i < bullets.length; i++){
