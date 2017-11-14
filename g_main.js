@@ -119,7 +119,7 @@ g_main.init = function () {
 
 function mainIter() {
     if (!requestedQuit()) {
-        updateScore();
+        //updateScore();
     } else {
         window.clearInterval(intervalID);
     }

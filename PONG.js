@@ -22,7 +22,7 @@ var KEY_D = 'D'.charCodeAt(0);
 var KEY_SOME = 'K'.charCodeAt(0);
 
 
-var tank = new Tank({
+tank = new Tank({
     cx : 400,
     cy : 470,
     sprite : new Sprite(g_images.tank, 50, 50),
@@ -36,6 +36,8 @@ var tank = new Tank({
     GO_LEFT : KEY_A,
     GO_FAST : KEY_SOME
 });
+
+
 
 
 //hér skilgreinum við width  til að geta notað annarstaðar this.width

@@ -30,9 +30,8 @@ function preloadIMG(x) {
 
 }
 
-var img = new Image(100,100);
-img.src = "images/tank.png";
 
+var tank;
 
 var badguys = [];
 

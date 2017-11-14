@@ -61,6 +61,13 @@ Bullet2.prototype.collidesWith = function () {
 
 
 
+    var nextY = this.cy + this.velY;
+    console.log("tank.height = " + tank.height + "tank.width =" + tank.width);
+    if(nextY + this.height/2 >= tank.cy - tank.height/2 && nextY - this.height/2 <= tank.cy + tank.height &&
+       this.cx >= tank.cx - tank.width/2 && this.cx <= tank.cx + tank.width/2){
+                      location.reload();
+  }
+
     /* var nextY = this.cy - this.velY;
      for(var i = 0; i < badguys.length; i++){
        var a = badguys[i];
