@@ -206,31 +206,5 @@ function scoreRender(ctx){
 
 
 
-
-
-var KEY_RESTART  = 'H'.charCodeAt(0);
-
-
-    if(g_keys[KEY_RESTART]){
-      console.log("hello");
-            var possHighScore = localStorage.getItem('breakouthighscore') || 0;
-    document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
-
-    document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
-    document.getElementById("yourscore").innerHTML = tank.count;
-
-    if(tank.count > possHighScore){
-
-
-        localStorage.setItem("breakouthighscore", tank.count);
-        document.getElementById("breakouthighscore").innerHTML = localStorage.getItem("breakouthighscore");
-
-    }
-        tank.count = 0;
-        g_isUpdatePaused = false;
-
-    }
-
-
 produceBadboys();
 g_main.init();

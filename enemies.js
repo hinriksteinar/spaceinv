@@ -36,11 +36,16 @@ Enemy.prototype.fireBullet = function (){
 
 
 Enemy.prototype.update = function (du) {
+  var KEY_RESTART = 'R'.charCodeAt(0);
+  if (eatKey(KEY_RESTART)) {
+    g_main._isGameOver = true;
+    location.reload();
+  }
   //console.log(this.cx - 25);
 
   if (this.cy + 100 > g_canvas.height){
     g_main._isGameOver = true;
-    location.reload();
+     location.reload();
     console.log("game over");
   }
 
