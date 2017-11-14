@@ -187,9 +187,6 @@ function renderSimulation(ctx) {
       enemyBullets[i].render(ctx);
     }
 
-    g_wall.render(ctx);
-    g_wall2.render(ctx);
-    g_wall3.render(ctx);
 
     tank.render(ctx);
     scoreRender(ctx);

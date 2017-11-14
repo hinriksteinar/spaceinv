@@ -25,8 +25,8 @@ Enemy.prototype.fireBullet = function (){
   enemyBullets.push(new Bullet2({
     cx     : this.cx,
     cy     : this.cy,
-    width  : 5,
-    height : 20,
+    width  : 20,
+    height : 30 ,
     velY   : -4,
     sprite : this.lazer
   }));
