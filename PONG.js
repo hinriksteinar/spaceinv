@@ -101,6 +101,7 @@ function myTimer(){
 
   console.log("heeey");
   enemyFire();
+  shoot.play();
 }
 
 function enemyFire(){

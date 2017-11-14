@@ -100,10 +100,12 @@ Bullet2.prototype.collidesWith = function () {
 
 
 
-Bullet2.prototype.render = function (ctx) {
+Bullet2.prototype.render = function s(ctx) {
 
     this.sprite.drawAt(ctx, this.cx-this.width/2, this.cy-this.height/2);
-shoot.play();
+
+
+
 
 
 };
