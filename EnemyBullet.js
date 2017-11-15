@@ -73,6 +73,8 @@ if (this.cy > g_canvas.height) { shoot_land.play();}
       else{
           g_lives--;
           enemyBullets = [];
+          tank.cx = 400;
+          tank.cy = 470;
           //play.shoot_land();
       }
   }
