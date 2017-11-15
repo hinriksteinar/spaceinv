@@ -38,6 +38,9 @@ var g_killCount = 0;
 
 var powerUpEnabled = false;
 
+var dropDown = false;
+
+var xTimeOut;
 
 var g_score = 0;
 

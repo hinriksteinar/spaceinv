@@ -9,7 +9,7 @@ function Enemy(descr) {
     }
     this.x2 = this.cx + this.width;
     this.y2 = this.cy + this.height;
-    this.yVel = 2;
+    this.yVel = 1.5;
 
 }
 
@@ -53,15 +53,21 @@ Enemy.prototype.update = function (du) {
       g_lives--;
     }
   }
+  if(dropDown){
+    this.cy += this.yVel;
+  }
 
   var nextX = this.cx + this.xVel;
   if(nextX < 0 || nextX + 25 > g_canvas.width){
+    dropDown = true;
+    pausex();
     turnAround();
     return;
   }
   else {
-
+    if(!dropDown){
     this.cx += this.xVel;
+  }
 
   }
 

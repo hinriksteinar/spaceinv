@@ -4,7 +4,6 @@ var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
-
 var KEY_W = 'W'.charCodeAt(0);
 var KEY_S = 'S'.charCodeAt(0);
 var KEY_A = 'A'.charCodeAt(0);
@@ -122,12 +121,16 @@ function enemyFire(){
   badguys[rando].fireBullet();
 }
 
+function pausex(){
+  xTimeOut = setTimeout(function(){
+    dropDown = false;
+  }, 200);
+}
 
 // lætur enemies fara til baka
 function turnAround(){
   for(var i = 0; i < badguys.length; i++){
     badguys[i].xVel *= -1;
-    badguys[i].cy += badguys[i].yVel;
 
   }
   invaderdown.play();
