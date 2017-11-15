@@ -22,7 +22,9 @@ function update(dt) {
 
     // Get out if skipping (e.g. due to pause-mode)
     //
+    if(isGameOverScreen && g_keys[KEY_RESTART]) location.reload();
     if (shouldSkipUpdate()) return;
+
 
     // Remember this for later
     //
