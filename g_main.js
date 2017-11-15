@@ -84,7 +84,7 @@ g_main.drawGameOverScreen = function () {
   var oldStyle = g_ctx.fillStyle;
   g_ctx.font = "50px Sans Serif";
   g_ctx.fillStyle = "white";
-  g_ctx.fillText("YOUR SCORE : " + g_score, 200,75);
+  g_ctx.fillText("YOUR SCORE : " + g_score, 195,75);
   g_ctx.fillText("PRESS 'N' TO TRY AGAIN", 100,450);
   g_ctx.font = oldFont;
   g_ctx.fillStyle = oldStyle;

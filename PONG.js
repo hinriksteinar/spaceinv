@@ -270,7 +270,7 @@ function displayWelcomeScreen(){
   var oldFont = g_ctx.font;
   g_ctx.font = "30px Sans Serif";
   g_ctx.fillStyle = 'WHITE';
-  g_ctx.fillText("TO START GAME PRESS L", 200,450);
+  g_ctx.fillText("TO START GAME PRESS L", 420,425);
   g_ctx.fillStyle = oldStyle;
   g_ctx.font = oldFont;
   if(g_keys[KEY_START]){
