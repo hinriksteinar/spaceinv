@@ -48,9 +48,9 @@ function produceBadboys(){
 
     g_level++;
     pauseAndDisplayLevel();
-    if(g_score !== 0) g_enemyXvel *= 1.12;
+    if(g_score !== 0) g_enemyXvel *= 1.08;
         for(var j = 0; j < 6; j++){
-      for(var i = 0; i < 12; i++){
+      for(var i = 0; i < 10; i++){
         if(j%2 == 0){
           pushEnemy2(i,j,g_enemyXvel);
         }
@@ -110,11 +110,11 @@ function pushEnemy3(i,j,xvel){
 
 }
 
-   myVar = setInterval(myTimer, 5000);
+   myVar = setInterval(myTimer, 3000);
 //resetInterval er fyrir pause function
   function resetInterval() {
     clearInterval(myVar);
-    myVar = setInterval(myTimer, 5000);
+    myVar = setInterval(myTimer, 3000);
    }
 
 function myTimer(){
