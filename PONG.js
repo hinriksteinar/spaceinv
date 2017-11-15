@@ -42,7 +42,8 @@ tank = new Tank({
 //hér skilgreinum við width  til að geta notað annarstaðar this.width
 //eins með cx cy isalive,
 function produceBadboys(){
-
+    g_level++;
+    pauseAndDisplayLevel();
     if(g_score !== 0) g_enemyXvel *= 1.12;
     for(var j = 0; j < 6; j++){
       for(var i = 0; i < 12; i++){
@@ -58,6 +59,8 @@ function produceBadboys(){
     }
   }
 }
+
+
 
 function pushEnemy1(i,j,xvel){
   badguys.push(new Enemy({
@@ -132,6 +135,29 @@ function turnAround(){
 // =============
 // GATHER INPUTS
 // =============
+var timeoutID;
+
+function pauseAndDisplayLevel(){
+    clearInterval(intervalID);
+    g_isUpdatePaused = !g_isUpdatePaused;
+    g_doRender       = !g_doRender;
+    g_doClear        = !g_doClear;
+    var oldFont = g_ctx.font;
+    var oldStyle = g_ctx.fillStyle;
+    g_ctx.fillStyle = "white";
+    g_ctx.font = "50px Sans Serif";
+    g_ctx.fillText("LEVEL " + g_level, 200,200);
+    g_ctx.font = oldFont;
+    g_ctx.fillStyle = oldStyle;
+    timeoutID = setTimeout(restartInterval,3000);
+}
+
+function restartInterval(){
+  g_isUpdatePaused = !g_isUpdatePaused;
+  g_doRender       = !g_doRender;
+  g_doClear        = !g_doClear;
+  intervalID = window.setInterval(mainIter, 16.666);
+}
 
 function gatherInputs() {
     // Nothing to do here!
