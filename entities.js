@@ -15,7 +15,8 @@ var g_images = {
   background    : preloadIMG("invaders.png"),
   tank_missile  : preloadIMG("tank_missile.png"),
   tank          : preloadIMG("tank.png"),
-  gameOverBackground    : preloadIMG("gameoverbackground.jpg")
+  gameOverBackground    : preloadIMG("gameoverbackground.jpg"),
+  welcomeScreenBackground    : preloadIMG("welcomescreenbackground.png")
 
 }
 
@@ -34,7 +35,7 @@ function preloadIMG(x) {
 
 var g_level = 0;
 
-var g_enemyXvel = 15;
+var g_enemyXvel = 1;
 
 var g_score = 0;
 
