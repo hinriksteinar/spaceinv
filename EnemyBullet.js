@@ -49,7 +49,7 @@ Bullet2.prototype.update = function (du) {
     this.collidesWith();
 
     if(this.cy > g_canvas.height){
-
+        shoot_land.play();
       enemyBullets.splice(enemyBullets.indexOf(this),1);
     }
     this.cy -= this.velY;
@@ -58,7 +58,6 @@ Bullet2.prototype.update = function (du) {
 
 
 Bullet2.prototype.collidesWith = function () {
-if (this.cy > g_canvas.height) { shoot_land.play();}
 
 
     var nextY = this.cy + this.velY;
@@ -75,7 +74,6 @@ if (this.cy > g_canvas.height) { shoot_land.play();}
           enemyBullets = [];
           tank.cx = 400;
           tank.cy = 470;
-          //play.shoot_land();
       }
   }
 

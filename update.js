@@ -62,12 +62,34 @@ var KEY_PAUSE = 'P'.charCodeAt(0);
 var KEY_STEP  = 'O'.charCodeAt(0);
 
 var g_isUpdatePaused = false;
+var clock_pause = false;
 
+function cok() {
+  if(clock_pause==true) {  clearTimeout(myVar);
+console.log('clockstopp');
+  }
+   else {
+
+    resetInterval();
+
+    console.log('clockresume');
+
+ }
+
+}
 function shouldSkipUpdate() {
 
     if (eatKey(KEY_PAUSE)) {
         g_isUpdatePaused = !g_isUpdatePaused;
+        clock_pause = !clock_pause;
+        
+        cok(clock_pause);
+
         enableMute();
+
+
+
+
     }
 
     return g_isUpdatePaused && !eatKey(KEY_STEP);

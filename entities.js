@@ -51,3 +51,5 @@ var lazers  = [];
 var bullets = [];
 
 var walls = [];
+
+var myVar;
