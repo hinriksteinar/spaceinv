@@ -55,7 +55,7 @@ var JellySound = function( audiofile )
 
 
             // volume á öll hljóð
-            newsound.volume = 0.5;
+            newsound.volume = 0.8;
 
             tracks.push( newsound );
             }

@@ -69,16 +69,19 @@ g_main.gameOver = function () {
     g_main.drawGameOverScreen()
 };
 
+var isGameOverScreen = false;
+
+var KEY_RESTART = 'N'.charCodeAt(0);
 g_main.drawGameOverScreen = function () {
-  console.log("hi");
+
+  isGameOverScreen = !isGameOverScreen;
   var oldFont = g_ctx.font;
   var oldStyle = g_ctx.fillStyle;
   g_ctx.font = "50px Sans Serif";
   g_ctx.fillStyle = "white";
   g_ctx.fillText("YOU ARE DEAD!",200,100);
-  g_ctx.fillText("YOUR SCORE : " + g_score, 200
-                                        ,200);
-  g_ctx.fillText("PRESS SPACE TO TRY AGAIN", 50,300);
+  g_ctx.fillText("YOUR SCORE : " + g_score, 200,200);
+  g_ctx.fillText("PRESS 'N' TO TRY AGAIN", 100,300);
   g_ctx.font = oldFont;
   g_ctx.fillStyle = oldStyle;
 
@@ -145,8 +148,5 @@ function mainIter() {
 }
 // Simple voluntary quit mechanism
 //
-var KEY_QUIT = 'Q'.charCodeAt(0);
-function requestedQuit() {
-    return g_keys[KEY_QUIT];
-}
+
 var intervalID = window.setInterval(mainIter, 16.666);
