@@ -60,14 +60,13 @@ var KEY_PAUSE = 'P'.charCodeAt(0);
 var KEY_STEP  = 'O'.charCodeAt(0);
 
 var g_isUpdatePaused = false;
-var sound_M = document.getElementById("buttonM");
-var sound_P= document.getElementById("buttonpP");
+
 function shouldSkipUpdate() {
 
     if (eatKey(KEY_PAUSE)) {
         g_isUpdatePaused = !g_isUpdatePaused;
         enableMute();
     }
-    
+
     return g_isUpdatePaused && !eatKey(KEY_STEP);
 }
