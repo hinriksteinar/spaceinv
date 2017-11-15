@@ -36,13 +36,11 @@ function preloadIMG(x) {
 var g_level = 0;
 
 var g_enemyXvel = 1;
-<<<<<<< HEAD
 
 var g_killCount = 0;
 
 var powerUpEnabled = false;
-=======
->>>>>>> 9b8dc8f14b606e7ebe0d86329c9ad11c358c02cc
+
 
 var g_score = 0;
 
