@@ -143,6 +143,12 @@ var timeoutID;
 
 function pauseAndDisplayLevel(){
     clearInterval(intervalID);
+    clearCanvas(g_ctx);
+    bullets = [];
+    explosions = [];
+    enemyBullets = [];
+    tank.cx = 400;
+    tank.cy = 470;
     g_isUpdatePaused = !g_isUpdatePaused;
     g_doRender       = !g_doRender;
     g_doClear        = !g_doClear;
