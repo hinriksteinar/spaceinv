@@ -75,13 +75,13 @@ var KEY_RESTART = 'N'.charCodeAt(0);
 g_main.drawGameOverScreen = function () {
 
   isGameOverScreen = !isGameOverScreen;
+  g_ctx.drawImage(g_images.gameOverBackground, 0, 0, g_canvas.width, g_canvas.height);
   var oldFont = g_ctx.font;
   var oldStyle = g_ctx.fillStyle;
   g_ctx.font = "50px Sans Serif";
   g_ctx.fillStyle = "white";
-  g_ctx.fillText("YOU ARE DEAD!",200,100);
-  g_ctx.fillText("YOUR SCORE : " + g_score, 200,200);
-  g_ctx.fillText("PRESS 'N' TO TRY AGAIN", 100,300);
+  g_ctx.fillText("YOUR SCORE : " + g_score, 200,75);
+  g_ctx.fillText("PRESS 'N' TO TRY AGAIN", 100,450);
   g_ctx.font = oldFont;
   g_ctx.fillStyle = oldStyle;
 
