@@ -111,10 +111,9 @@ function pushEnemy3(i,j,xvel){
 }
 
    myVar = setInterval(myTimer, 5000);
-
+//resetInterval er fyrir pause function
   function resetInterval() {
     clearInterval(myVar);
-
     myVar = setInterval(myTimer, 5000);
    }
 
