@@ -30,7 +30,7 @@ Tank.prototype.update = function () {
 
 
     if(g_keys[this.KEY_FIRE] && !g_shotsFired){
-      g_shotsFired = true;
+      //g_shotsFired = true;
       shoot_from_spaceship.play();
 
 
@@ -42,7 +42,25 @@ Tank.prototype.update = function () {
         velY   : 10,
         sprite : new Sprite(g_images.tank_missile, 5,20)
       }));
+
+      bullets.push(new Bullet({
+        cx     : this.cx+10,
+        cy     : this.cy,
+        width  : 5,
+        height : 20,
+        velY   : 10,
+        sprite : new Sprite(g_images.tank_missile, 5,20)
+      }));
+      bullets.push(new Bullet({
+        cx     : this.cx-10,
+        cy     : this.cy,
+        width  : 5,
+        height : 20,
+        velY   : 10,
+        sprite : new Sprite(g_images.tank_missile, 5,20)
+      }));
     }
+
 
     if(g_keys[this.GO_RIGHT] && this.cx + this.halfWidth < g_canvas.width){
         if(g_keys[this.GO_FAST]){

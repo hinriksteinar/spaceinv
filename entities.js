@@ -30,7 +30,8 @@ function preloadIMG(x) {
 
 }
 
-g_level = 1;
+
+var g_level = 0;
 
 var g_enemyXvel = 1;
 

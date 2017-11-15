@@ -146,7 +146,6 @@ function mainIter() {
         window.clearInterval(intervalID);
     }
 }
-// Simple voluntary quit mechanism
-//
+
 
 var intervalID = window.setInterval(mainIter, 16.666);
