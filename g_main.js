@@ -75,7 +75,11 @@ var KEY_RESTART = 'N'.charCodeAt(0);
 g_main.drawGameOverScreen = function () {
 
   isGameOverScreen = !isGameOverScreen;
+  enableMute();
   g_ctx.drawImage(g_images.gameOverBackground, 0, 0, g_canvas.width, g_canvas.height);
+
+  gameover.play();
+
   var oldFont = g_ctx.font;
   var oldStyle = g_ctx.fillStyle;
   g_ctx.font = "50px Sans Serif";

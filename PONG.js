@@ -265,13 +265,14 @@ var KEY_START = 'L'.charCodeAt(0);
 
 function displayWelcomeScreen(){
   clearCanvas(g_ctx);
+  g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
   var oldStyle = g_ctx.fillStyle;
   var oldFont = g_ctx.font;
-  g_ctx.font = "50px Sans Serif";
+  g_ctx.font = "Bold 50px Sans Serif";
   g_ctx.fillStyle = 'GREEN';
   g_ctx.fillText("SPACE INVADERS", 200,100);
   g_ctx.font = "30px Sans Serif";
-  g_ctx.fillText("TO START GAME PRESS L", 200,200);
+  g_ctx.fillText("TO START GAME PRESS L", 200,450);
   g_ctx.fillStyle = oldStyle;
   g_ctx.font = oldFont;
   if(g_keys[KEY_START]){
