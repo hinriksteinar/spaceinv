@@ -74,6 +74,7 @@ Bullet2.prototype.collidesWith = function () {
           enemyBullets = [];
           tank.cx = 400;
           tank.cy = 470;
+          hit.play();
       }
   }
 
