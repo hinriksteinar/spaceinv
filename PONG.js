@@ -110,7 +110,12 @@ function pushEnemy3(i,j,xvel){
 
 }
 
-var myVar = setInterval(myTimer, 5000);
+   myVar = setInterval(myTimer, 5000);
+//resetInterval er fyrir pause function
+  function resetInterval() {
+    clearInterval(myVar);
+    myVar = setInterval(myTimer, 5000);
+   }
 
 function myTimer(){
 
@@ -238,7 +243,7 @@ function scoreRender(ctx){
   var oldFont = ctx.font;
   ctx.font = "40px Sans Serif";
   ctx.fillStyle = 'White';
-  ctx.fillText("SCORE: " + g_score, 30,30, 100);
+  ctx.fillText("SCORE: " + g_score, g_canvas.width-700,30, 100);
   ctx.fillStyle = oldStyle;
   ctx.font = oldFont;
 }
