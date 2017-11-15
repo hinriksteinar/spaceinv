@@ -43,7 +43,13 @@ tank = new Tank({
 //eins með cx cy isalive,
 function produceBadboys(){
 
-    if(g_score !== 0) g_enemyXvel *= 1.12;
+    if(g_score !== 0){
+      g_enemyXvel *= 1.12;
+      g_lives++;
+      g_score += 5000;
+
+    }
+
     for(var j = 0; j < 6; j++){
       for(var i = 0; i < 12; i++){
         if(j%2 == 0){
