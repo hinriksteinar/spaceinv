@@ -6,11 +6,7 @@ var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
-/*function updateScore(){
-    g_ctx.font = '40px Ariel';
-    g_ctx.fillText("Score: " tank + 5, 40);
-}
-*/
+
 
 
 // TANK 1
@@ -39,8 +35,7 @@ tank = new Tank({
 
 
 
-//hér skilgreinum við width  til að geta notað annarstaðar this.width
-//eins með cx cy isalive,
+
 function produceBadboys(){
 
     if(g_score !== 0){
@@ -252,10 +247,33 @@ function livesRender(ctx){
   ctx.fillStyle = oldStyle;
   ctx.font = oldFont;
 
+}
+
+var KEY_START = 'L'.charCodeAt(0);
+
+function displayWelcomeScreen(){
+  clearCanvas(g_ctx);
+  var oldStyle = g_ctx.fillStyle;
+  var oldFont = g_ctx.font;
+  g_ctx.font = "50px Sans Serif";
+  g_ctx.fillStyle = 'GREEN';
+  g_ctx.fillText("SPACE INVADERS", 200,100);
+  g_ctx.font = "30px Sans Serif";
+  g_ctx.fillText("TO START GAME PRESS L", 200,200);
+  g_ctx.fillStyle = oldStyle;
+  g_ctx.font = oldFont;
+  if(g_keys[KEY_START]){
+    clearCanvas(g_ctx);
+    clearInterval(welcomeScreenInterVal);
+    g_main.init();
+  }
+
 
 }
 
 
 
 
-g_main.init();
+//g_main.init();
+var welcomeScreenInterVal = window.setInterval(displayWelcomeScreen,
+                                                    1.66666);
