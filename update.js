@@ -16,14 +16,23 @@ var g_prevUpdateDu = null;
 // Track odds and evens for diagnostic / illustrative purposes
 //
 var g_isUpdateOdd = false;
-
+var powerUpInterval;
 
 function update(dt) {
 
     // Get out if skipping (e.g. due to pause-mode)
     //
     if(isGameOverScreen && g_keys[KEY_RESTART]) location.reload();
+
     if (shouldSkipUpdate()) return;
+
+    if(g_killCount > 20){
+      g_killCount = 0;
+      powerUpEnabled = true;
+      powerUpInterval = setTimeout(function(){
+        powerUpEnabled = false;
+      }, 10000);
+    }
 
 
     // Remember this for later
@@ -60,7 +69,7 @@ function update(dt) {
 //
 var KEY_PAUSE = 'P'.charCodeAt(0);
 var KEY_STEP  = 'O'.charCodeAt(0);
-
+var mute = false;
 var g_isUpdatePaused = false;
 var clock_pause = false;
 // til að pausa klukku fyrir enemybullet
@@ -73,17 +82,26 @@ console.log('clockstopp');
     resetInterval();
     console.log('clockresume');
  }
+}
+ function soundmute() {
+if (mute==true) {
+  enableMute();
+}
+else { enablePlay();
 
 }
+    }
+
+
 function shouldSkipUpdate() {
 
     if (eatKey(KEY_PAUSE)) {
         g_isUpdatePaused = !g_isUpdatePaused;
         clock_pause = !clock_pause;
-
+        mute = !mute;
         clockPause(clock_pause);
+        soundmute(mute);
 
-        enableMute();
 
 
 

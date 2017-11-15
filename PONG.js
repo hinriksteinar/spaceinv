@@ -150,6 +150,7 @@ function pauseAndDisplayLevel(){
     clearInterval(intervalID);
     clearCanvas(g_ctx);
     bullets = [];
+    g_shotsFired = false;
     explosions = [];
     enemyBullets = [];
     tank.cx = 400;
@@ -243,7 +244,7 @@ function scoreRender(ctx){
   var oldFont = ctx.font;
   ctx.font = "40px Sans Serif";
   ctx.fillStyle = 'White';
-  ctx.fillText("SCORE: " + g_score, g_canvas.width-700,30, 100);
+  ctx.fillText("SCORE: " + g_score, g_canvas.width-700,30,200);
   ctx.fillStyle = oldStyle;
   ctx.font = oldFont;
 }
@@ -254,7 +255,7 @@ function livesRender(ctx){
   var oldFont = ctx.font;
   ctx.font = "40px Sans Serif";
   ctx.fillStyle = 'White';
-  ctx.fillText("LIVES: " + g_lives, g_canvas.width-200,30, 100);
+  ctx.fillText("LIVES: " + g_lives, g_canvas.width-200,30, 200);
   ctx.fillStyle = oldStyle;
   ctx.font = oldFont;
 
