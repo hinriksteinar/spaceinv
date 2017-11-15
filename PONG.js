@@ -258,7 +258,7 @@ function livesRender(ctx){
 
 }
 
-var KEY_START = 'L'.charCodeAt(0);
+var KEY_START = ' '.charCodeAt(0);
 
 function displayWelcomeScreen(){
   clearCanvas(g_ctx);
@@ -267,7 +267,7 @@ function displayWelcomeScreen(){
   var oldFont = g_ctx.font;
   g_ctx.font = "30px Sans Serif";
   g_ctx.fillStyle = 'WHITE';
-  g_ctx.fillText("TO START GAME PRESS L", 420,425);
+  g_ctx.fillText("PRESS SPACE TO BEGIN", 420,425);
   g_ctx.fillStyle = oldStyle;
   g_ctx.font = oldFont;
   if(g_keys[KEY_START]){
