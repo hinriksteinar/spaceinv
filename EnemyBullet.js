@@ -1,17 +1,4 @@
-// ======
-// BULLET
-// ======
-//
 "use strict";
-
-/* jshint browser: true, devel: true, globalstrict: true */
-
-/*
-0        1         2         3         4         5         6         7         8
-12345678901234567890123456789012345678901234567890123456789012345678901234567890
-*/
-
-
 
 
 // A generic contructor which accepts an arbitrary descriptor object
@@ -26,25 +13,11 @@ function Bullet2(descr) {
     this.y2 = this.cy + this.height;
 }
 
-// Initial, inheritable, default values
-//
-// (You might want these to assist with early testing,
-//  even though they are unnecessary in the "real" code.)
-//
-/*Bullet.prototype.rotation = 0;
-Bullet.prototype.cx = 200;
-Bullet.prototype.cy = 200;
-Bullet.prototype.velX = 1;
-Bullet.prototype.velY = 1;*/
-var g_shotsFired = false;
 
-// Convert times from seconds to "nominal" time units.
+var g_shotsFired = false;
 
 
 Bullet2.prototype.update = function (du) {
-
-    // TODO: Implement this
-
 
     this.collidesWith();
 

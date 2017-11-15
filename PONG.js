@@ -1,15 +1,9 @@
 "use strict";
 
-/* jshint browser: true, devel: true, globalstrict: true */
-
 var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
-
-
-
-// TANK 1
 
 var KEY_W = 'W'.charCodeAt(0);
 var KEY_S = 'S'.charCodeAt(0);

@@ -13,8 +13,6 @@ function Tank(descr) {
     }
 }
 
-// Add these properties to the prototype, where they will serve as
-// shared defaults, in the absence of an instance-specific overrides.
 
 Tank.prototype.halfWidth = 25;
 Tank.prototype.halfHeight = 25;
@@ -95,8 +93,6 @@ Tank.prototype.update = function () {
 
 
 Tank.prototype.render = function (ctx) {
-    // (cx, cy) is the centre; must offset it for drawing
-    //ctx.fillStyle = this.color;
     this.sprite.drawAt(ctx,
                  this.cx-this.halfWidth,
                  this.cy-this.halfHeight);

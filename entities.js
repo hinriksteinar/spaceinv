@@ -20,9 +20,6 @@ var g_images = {
 
 }
 
-
-// preloads and returns the image
-
 function preloadIMG(x) {
 
   var img = new Image(50,50);
