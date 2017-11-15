@@ -34,7 +34,11 @@ function preloadIMG(x) {
 
 var g_level = 0;
 
-var g_enemyXvel = 15;
+var g_enemyXvel = 1;
+
+var g_killCount = 0;
+
+var powerUpEnabled = false;
 
 var g_score = 0;
 
