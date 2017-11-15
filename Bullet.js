@@ -50,7 +50,9 @@ Bullet.prototype.update = function (du) {
 
     if(this.cy < 0){
       bullets.splice(bullets.indexOf(this),1);
-      g_shotsFired = false;
+      if(bullets.length == 0){
+        g_shotsFired = false;
+      }
     }
     this.cy -= this.velY;
 
@@ -70,12 +72,15 @@ Bullet.prototype.collidesWith = function () {
          explode(a.cx, a.cy);
          g_score += badguys[i].score;
 
-
-
-
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
-         g_shotsFired = false;
+
+         if(!powerUpEnabled) g_killCount++;
+
+         if(bullets.length == 0){
+           g_shotsFired = false;
+         }
+
          explotion.play();
          //console.log("collision");
          return;
