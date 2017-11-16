@@ -2,6 +2,8 @@
 
 var g_canvas = document.getElementById("myCanvas");
 var g_ctx = g_canvas.getContext("2d");
+var s_canvas = document.getElementById("myCanvas");
+var s_ctx = s_canvas.getContext("2d");
 var possHighScore = localStorage.getItem('highscore') || 0;
 
 var KEY_W = 'W'.charCodeAt(0);
@@ -259,29 +261,72 @@ function livesRender(ctx){
 }
 
 var KEY_START = ' '.charCodeAt(0);
+if(g_keys[KEY_START]){
 
-function displayWelcomeScreen(){
+
   clearCanvas(g_ctx);
-  g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
-  var oldStyle = g_ctx.fillStyle;
-  var oldFont = g_ctx.font;
-  g_ctx.font = "30px Sans Serif";
-  g_ctx.fillStyle = 'WHITE';
-  g_ctx.fillText("PRESS SPACE TO BEGIN", 420,425);
-  g_ctx.fillStyle = oldStyle;
-  g_ctx.font = oldFont;
-  if(g_keys[KEY_START]){
-    clearCanvas(g_ctx);
-    clearInterval(welcomeScreenInterVal);
-    g_main.init();
-  }
+  clearInterval(welcomeScreenInterVal);
+  clearCanvas(s_ctx);
+  clearInterval(blinkinterval);
 
+  g_main.init();
 
 }
+function displayWelcomeScreen(){
+  //clearInterval(welcomeScreenInterVal);
+  //clearCanvas(g_ctx);
+  //sclearCanvas(s_ctx);
+  g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
+
+  blinktext();
+clearInterval(welcomeScreenInterVal);
+
+  if(g_keys[KEY_START]){
+
+    clearCanvas(g_ctx);
+    clearInterval(welcomeScreenInterVal);
+    clearCanvas(s_ctx);
+    clearInterval(blinkinterval);
+
+    g_main.init();
+
+  }
+}
+var count = 10000000;
+
+function blinktext() {
+count--;
+if (count %2 ==1)
+{
+var oldStyle = s_ctx.fillStyle;
+var oldFont = s_ctx.font;
+s_ctx.font = "30px Sans Serif";
+s_ctx.fillStyle = 'red';
+s_ctx.fillText("PRESS SPACE TO BEGIN", 420,425);
+s_ctx.fillStyle = oldStyle;
+s_ctx.font = oldFont;
+
+}
+else
+{
+clearCanvas(s_ctx);
+g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
+}
+if(g_keys[KEY_START]){
 
 
+  clearCanvas(g_ctx);
+  clearInterval(welcomeScreenInterVal);
+  clearCanvas(s_ctx);
+  clearInterval(blinkinterval);
 
+  g_main.init();
+
+}
+}
 
 //g_main.init();
+var blinkinterval = window.setInterval(blinktext,
+  100);
 var welcomeScreenInterVal = window.setInterval(displayWelcomeScreen,
-                                                    1.66666);
+                                                    1.6);
