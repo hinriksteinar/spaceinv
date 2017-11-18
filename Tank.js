@@ -28,7 +28,7 @@ Tank.prototype.update = function () {
 
 
     if(g_keys[this.KEY_FIRE] && !g_shotsFired){
-      //g_shotsFired = true;
+      g_shotsFired = true;
       shoot_from_spaceship.play();
 
 

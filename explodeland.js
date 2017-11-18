@@ -6,13 +6,12 @@ function Exp2(descr) {
 }
 
 function explodedrop(x,y){
-  console.log(y);
       explosions.push(new Exp2({
         cx : x,
         cy : y,
         xVel : 0,
         yVel : -5,
-        y : 20
+        y : 30
       }));
 
       explosions.push(new Exp2({
@@ -52,7 +51,7 @@ function explodedrop(x,y){
         cy : y,
         xVel : -15,
         yVel : -7,
-        r    : 3
+        r   : 3
       }));
 
 
@@ -60,7 +59,7 @@ function explodedrop(x,y){
 
 Exp2.prototype.update = function (){
 
-     if(Math.abs(this.xVel) < 1.1){
+     if(Math.abs(this.xVel) < 0.5){
        explosions.splice(explosions.indexOf(this), 1);
      }
      else{
