@@ -15,6 +15,7 @@ var g_images = {
   background    : preloadIMG("invaders.png"),
   tank_missile  : preloadIMG("tank_missile.png"),
   tank          : preloadIMG("tank.png"),
+  explotion     : preloadIMG("test.png"),
   gameOverBackground    : preloadIMG("gameoverbackground.jpg"),
   welcomeScreenBackground    : preloadIMG("welcomescreenbackground.png")
 

@@ -49,7 +49,13 @@ Bullet2.prototype.update = function (du) {
     this.collidesWith();
 
     if(this.cy > g_canvas.height){
+      console.log(g_canvas.height);
+      console.log(this.cy + 'cy');
+
+      console.log(this.cx + 'cx');
         shoot_land.play();
+        explodedrop(this.cx, this.cy);
+
       enemyBullets.splice(enemyBullets.indexOf(this),1);
     }
     this.cy -= this.velY;
@@ -75,6 +81,7 @@ Bullet2.prototype.collidesWith = function () {
           tank.cx = 400;
           tank.cy = 470;
           hit.play();
+          explodedrop(this.cx, this.cy);
       }
   }
 

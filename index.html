@@ -24,6 +24,7 @@
     <script src="sprites.js"></script>
     <script src="entities.js"></script>
     <script src="Explosion.js"></script>
+    <script src="explodeland.js"></script>
     <script src="EnemyBullet.js"></script>
     <script src="enemies.js"></script>
     <script src="Bullet.js"></script>
@@ -47,6 +48,7 @@
       <button class="button2" onclick="enablePlay()" type="button">Play All Game-sound</button>
         <script>
           var vid = document.getElementById("background_audio");
+          vid.volume = 0.5;
           var s0 = document.getElementById("jellysound0track0");
           var s1 = document.getElementById("jellysound1track0");
           var s2 = document.getElementById("jellysound2track0");
@@ -80,6 +82,13 @@
 
 
 
-    <h2><b>To Play the Space Invaders game, use A and D to move the ship <br> Space Bar = Shoot <br> K = Ship Power <br> P = Pause Game <br> R = Restart Game </h2>
+    <h2>To Play the Space Invaders game, use A and D to move the ship <br>
+      Kill 10 enemys and gain PowerUP
+      <br> Space Bar = Shoot
+       <br> K = Ship Power
+       <br> P = Pause Game
+       <br> R = Restart Game
+<br>
+     </h2>
   </body>
 </html>

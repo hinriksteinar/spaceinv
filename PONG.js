@@ -215,6 +215,7 @@ function updateSimulation(du) {
 
 function renderSimulation(ctx) {
     clearCanvas(ctx)
+    
 
     for(var i = 0; i < explosions.length; i++){
       explosions[i].render();
