@@ -54,6 +54,22 @@ function explode(x,y){
         r    : 5
       }));
 
+      explosions.push(new Exp({
+        cx : x,
+        cy : y,
+        xVel : 0,
+        yVel : 0.1,
+        y    : 10
+      }));
+
+      explosions.push(new Exp({
+        cx : x,
+        cy : y,
+        xVel : 0,
+        yVel : 0.2,
+        s    : 5
+      }));
+
 
 }
 
@@ -72,4 +88,7 @@ Exp.prototype.update = function (){
 
 Exp.prototype.render = function (){
 	fillCircle(g_ctx, this.cx, this.cy, this.r, 'blue');
+  fillCircleY(g_ctx, this.cx, this.cy, this.y, 'yellow');
+  fillCircle2(g_ctx, this.cx, this.cy, this.s, 'red');
+
 }
