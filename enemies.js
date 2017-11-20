@@ -1,6 +1,8 @@
 //----------------------------------------------------------
 //  ENEMIES
-//
+//  Called from Spaceinv.js
+//  Handles bullets from enemies and prevents enemies
+//  from going off the canvas.
 //----------------------------------------------------------
 
 function Enemy(descr) {
@@ -14,7 +16,7 @@ function Enemy(descr) {
 }
 
 Enemy.prototype.render = function(ctx){
-  // STUFF
+
   this.sprite.drawAt(ctx, this.cx,
                           this.cy);
 
@@ -66,7 +68,7 @@ Enemy.prototype.update = function (du) {
   }
   else {
     if(!dropDown){
-    this.cx += this.xVel;
+      this.cx += this.xVel;
   }
 
   }

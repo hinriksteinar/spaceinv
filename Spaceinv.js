@@ -1,3 +1,12 @@
+/*
+*   Here we display the welcome screen, start the game
+*   and produce the enemies. We also made a few extra
+*   time intervals to use with the powerups and more. 
+*
+*/
+
+
+
 "use strict";
 
 var g_canvas = document.getElementById("myCanvas");
@@ -26,9 +35,6 @@ tank = new Tank({
     GO_LEFT : KEY_A,
     GO_FAST : KEY_SOME
 });
-
-
-
 
 
 function produceBadboys(){
@@ -215,7 +221,7 @@ function updateSimulation(du) {
 
 function renderSimulation(ctx) {
     clearCanvas(ctx)
-    
+
 
     for(var i = 0; i < explosions.length; i++){
       explosions[i].render();
@@ -273,14 +279,13 @@ if(g_keys[KEY_START]){
   g_main.init();
 
 }
+
+
 function displayWelcomeScreen(){
-  //clearInterval(welcomeScreenInterVal);
-  //clearCanvas(g_ctx);
-  //sclearCanvas(s_ctx);
   g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
 
   blinktext();
-clearInterval(welcomeScreenInterVal);
+  clearInterval(welcomeScreenInterVal);
 
   if(g_keys[KEY_START]){
 
@@ -296,34 +301,33 @@ clearInterval(welcomeScreenInterVal);
 var count = 10000000;
 
 function blinktext() {
-count--;
-if (count %2 ==1)
-{
-var oldStyle = s_ctx.fillStyle;
-var oldFont = s_ctx.font;
-s_ctx.font = "30px Sans Serif";
-s_ctx.fillStyle = 'red';
-s_ctx.fillText("PRESS SPACE TO BEGIN", 420,425);
-s_ctx.fillStyle = oldStyle;
-s_ctx.font = oldFont;
+    count--;
+    if (count %2 ==1)
+    {
+      var oldStyle = s_ctx.fillStyle;
+      var oldFont = s_ctx.font;
+      s_ctx.font = "30px Sans Serif";
+      s_ctx.fillStyle = 'red';
+      s_ctx.fillText("PRESS SPACE TO BEGIN", 420,425);
+      s_ctx.fillStyle = oldStyle;
+      s_ctx.font = oldFont;
+    }
+    else
+    {
+      clearCanvas(s_ctx);
+      g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
+    }
+    if(g_keys[KEY_START]){
 
-}
-else
-{
-clearCanvas(s_ctx);
-g_ctx.drawImage(g_images.welcomeScreenBackground, 0, 0, g_canvas.width, g_canvas.height);
-}
-if(g_keys[KEY_START]){
 
+      clearCanvas(g_ctx);
+      clearInterval(welcomeScreenInterVal);
+      clearCanvas(s_ctx);
+      clearInterval(blinkinterval);
 
-  clearCanvas(g_ctx);
-  clearInterval(welcomeScreenInterVal);
-  clearCanvas(s_ctx);
-  clearInterval(blinkinterval);
+      g_main.init();
 
-  g_main.init();
-
-}
+    }
 }
 
 //g_main.init();

@@ -1,5 +1,10 @@
 "use strict";
 
+/*
+ * Bullets fired from the ship.
+ * Uses similar logic as the pong ball. Collides with etc.
+*/
+
 
 function Bullet(descr) {
     for (var property in descr) {
@@ -39,11 +44,16 @@ Bullet.prototype.collidesWith = function () {
        var a = badguys[i];
        if(nextY - this.height/2 <= a.cy+a.height/2 && nextY + this.height/2 >= a.cy - a.height/2
          && this.cx >= a.cx && this.cx <= a.cx + a.width){
+
          explode(a.cx, a.cy);
          g_score += badguys[i].score;
+
          badguys.splice(badguys.indexOf(a),1);
          bullets.splice(bullets.indexOf(this),1);
+
+         // prevents having constant powerups
          if(!powerUpEnabled) g_killCount++;
+
          if(bullets.length == 0){
            g_shotsFired = false;
          }

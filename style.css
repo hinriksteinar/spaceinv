@@ -30,7 +30,7 @@ h2{
   background: rgb(28, 184, 65); /* this is a green */
   top : 1px;
   margin-top: 18%;
-  margin-left: 10% ;
+  margin-left: 40px ;
   font-size: 17px;
    transition: .5s ease;
 
@@ -43,7 +43,7 @@ h2{
   background: rgb(28, 184, 65); /* this is a green */
   top: 1px;
   margin-top: 15%;
-  margin-left: 10% ;
+  margin-left: 40px ;
   font-size: 17px;
 }
 

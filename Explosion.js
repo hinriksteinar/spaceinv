@@ -1,3 +1,9 @@
+/*
+*  The other part of the explosions. When enemies die. 
+*/
+
+
+
 function Exp(descr) {
     for (var property in descr) {
         this[property] = descr[property];

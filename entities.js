@@ -1,8 +1,7 @@
 //---------------------
 //   preloaded images
 //---------------------
-// Let's preload the images the naive way
-// in an object
+// Contains globals
 
 var g_images = {
 

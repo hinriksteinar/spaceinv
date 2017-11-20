@@ -1,3 +1,10 @@
+
+/*
+*   Part of the explosions
+*/
+
+
+
 function Exp2(descr) {
     for (var property in descr) {
         this[property] = descr[property];

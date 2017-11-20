@@ -1,8 +1,7 @@
 // ============
 // TANK STUFF
+// Handles the tank movements and the fire mechanic. 
 // ============
-
-// COMMON TANK STUFF
 
 "use strict";
 

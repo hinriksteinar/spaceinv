@@ -1,16 +1,10 @@
-// ======
-// BULLET
-// ======
+// ===================================
+//       Enemy Bullets
+//   Differs slightly from bullets shot from the
+//   ship.
+// =================================
 //
 "use strict";
-
-/* jshint browser: true, devel: true, globalstrict: true */
-
-/*
-0        1         2         3         4         5         6         7         8
-12345678901234567890123456789012345678901234567890123456789012345678901234567890
-*/
-
 
 
 
@@ -26,19 +20,7 @@ function Bullet2(descr) {
     this.y2 = this.cy + this.height;
 }
 
-// Initial, inheritable, default values
-//
-// (You might want these to assist with early testing,
-//  even though they are unnecessary in the "real" code.)
-//
-/*Bullet.prototype.rotation = 0;
-Bullet.prototype.cx = 200;
-Bullet.prototype.cy = 200;
-Bullet.prototype.velX = 1;
-Bullet.prototype.velY = 1;*/
 var g_shotsFired = false;
-
-// Convert times from seconds to "nominal" time units.
 
 
 Bullet2.prototype.update = function (du) {
@@ -49,10 +31,10 @@ Bullet2.prototype.update = function (du) {
     this.collidesWith();
 
     if(this.cy > g_canvas.height){
-      console.log(g_canvas.height);
-      console.log(this.cy + 'cy');
+      //console.log(g_canvas.height);
+      //console.log(this.cy + 'cy');
 
-      console.log(this.cx + 'cx');
+      //console.log(this.cx + 'cx');
         shoot_land.play();
         explodedrop(this.cx, this.cy);
 
@@ -81,20 +63,15 @@ Bullet2.prototype.collidesWith = function () {
           tank.cx = 400;
           tank.cy = 470;
           hit.play();
-          explodedrop(this.cx, this.cy);
+          explodedrop(this.cx-this.halfWidth, this.cy-this.halfHeight);
       }
   }
 
 };
 
-
-
 Bullet2.prototype.render = function (ctx) {
 
     this.sprite.drawAt(ctx, this.cx-this.width/2, this.cy-this.height/2);
-
-
-
 
 
 };

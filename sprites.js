@@ -1,4 +1,7 @@
 
+/*
+*  Just a sprite constructor 
+*/
 function Sprite(image, width, height){
   this.image = image;
   this.width = width;
